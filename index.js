@@ -1,5 +1,5 @@
 /* =============================================
-   AVINASH VERMA PORTFOLIO — JAVASCRIPT
+   ADITYA SONI PORTFOLIO — JAVASCRIPT
    Premium Enhanced Edition
    ============================================= */
 
@@ -25,7 +25,6 @@ document.addEventListener('DOMContentLoaded', async () => {
   initSkillBars();       // fills progress bar widths via IntersectionObserver
   initActiveNavLink();   // active pill indicator
   initBackToTop();       // back to top button visibility
-  initAchievements();    // achievements & certifications section
 
   /* NOTE: Hero entrance, scroll reveal, count-up, timeline animation,
      and magnetic buttons are all handled by animations.js (GSAP) */
@@ -72,7 +71,7 @@ function initCustomCursor() {
   animateFollower();
 
   // Expand cursor on hover
-  const interactives = document.querySelectorAll('a, button, input, textarea, .project-card, .hobby-card, .stat-card, .tech-icon-card, .achievement-card, .detail-item, .timeline-card, .filter-btn');
+  const interactives = document.querySelectorAll('a, button, input, textarea, .project-card, .stat-card, .tech-icon-card, .detail-item, .timeline-card, .filter-btn');
   interactives.forEach(el => {
     el.addEventListener('mouseenter', () => {
       cursor.classList.add('cursor-hover');
@@ -145,16 +144,15 @@ function initTypingEffect() {
   const descEl  = document.getElementById('heroDesc');
   if (!greetEl || !roleEl) return;
 
-  const greeting = "Hi, I'm Avinash";
+  const greeting = "Hi, I'm Aditya";
   const roles = [
-    'Web Developer',
-    'Frontend Developer',
-    'C++ Programmer',
-    'Java Programmer',
-    'Problem Solver',
-    'BTech CS Student',
+    'B.Tech CSE (AI & ML) Student',
+    'Developer',
+    'AI Enthusiast',
+    'Software Developer',
+    'Tech Explorer'
   ];
-  const description = "A passionate BTech Computer Science student crafting clean, efficient, and user-friendly web experiences. I turn ideas into interactive digital reality.";
+  const description = "A Computer Science student specializing in AI & ML, passionate about programming, web development, artificial intelligence, and building practical technology.";
 
   // Inject a real caret span (not CSS ::after)
   function setCaret(el, show) {
@@ -173,12 +171,12 @@ function initTypingEffect() {
     let i = 0;
     setCaret(greetEl, true);
     function tick() {
-      const idx = greeting.indexOf('Avinash');
+      const idx = greeting.indexOf('Aditya');
       if (i > idx) {
         greetEl.innerHTML =
           greeting.slice(0, idx) +
-          '<span class="highlight">' + greeting.slice(idx, idx + 7) + '</span>' +
-          greeting.slice(idx + 7, i);
+          '<span class="highlight">' + greeting.slice(idx, idx + 6) + '</span>' +
+          greeting.slice(idx + 6, i);
       } else {
         greetEl.textContent = greeting.slice(0, i);
       }
@@ -249,14 +247,12 @@ function initTypingEffect() {
 }
 
 
-
 /* =============================================
-   9. CONTACT FORM SUBMIT HANDLER
+   5. CONTACT FORM SUBMIT HANDLER
    ============================================= */
 window.handleFormSubmit = async function() {
   const name = document.getElementById('name').value.trim();
   const email = document.getElementById('email').value.trim();
-  const subject = document.getElementById('subject').value.trim();
   const message = document.getElementById('message').value.trim();
 
   if (!name) { alert('Please enter your name.'); return; }
@@ -275,7 +271,7 @@ window.handleFormSubmit = async function() {
       const response = await fetch('https://n9cxde66.function2.insforge.app/handle-contact', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ name, email, subject, message })
+        body: JSON.stringify({ name, email, message })
       });
 
       if (response.ok) {
@@ -306,7 +302,7 @@ window.handleFormSubmit = async function() {
     const successH3 = formSuccess.querySelector('h3');
     const successP  = formSuccess.querySelector('p');
     if (successH3) successH3.innerText = 'Message Sent Successfully!';
-    if (successP)  successP.innerText  = aiResponse || "Thank you for reaching out! Avinash will get back to you shortly.";
+    if (successP)  successP.innerText  = aiResponse || "Thank you for reaching out! Aditya will get back to you shortly.";
 
     formSuccess.style.display = 'block';
 
@@ -323,10 +319,8 @@ function validateEmail(email) {
 }
 
 
-
-
 /* =============================================
-   10. SMOOTH SCROLL FOR ANCHOR LINKS
+   6. SMOOTH SCROLL FOR ANCHOR LINKS
    ============================================= */
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
   anchor.addEventListener('click', function (e) {
@@ -342,7 +336,7 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
 
 
 /* =============================================
-   11. SCROLL PROGRESS BAR
+   7. SCROLL PROGRESS BAR
    ============================================= */
 function initScrollProgress() {
   const bar = document.getElementById('scrollProgress');
@@ -358,7 +352,7 @@ function initScrollProgress() {
 
 
 /* =============================================
-   12. DARK / LIGHT THEME TOGGLE
+   8. DARK / LIGHT THEME TOGGLE
    ============================================= */
 function initThemeToggle() {
   const btn = document.getElementById('themeToggle');
@@ -366,7 +360,7 @@ function initThemeToggle() {
   if (!btn) return;
 
   // Load saved theme or system preference
-  const saved = localStorage.getItem('av-theme');
+  const saved = localStorage.getItem('as-theme');
   const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
   const initial = saved || (prefersDark ? 'dark' : 'light');
   setTheme(initial, false);
@@ -382,53 +376,13 @@ function initThemeToggle() {
       setTimeout(() => html.classList.remove('theme-transitioning'), 600);
     }
     html.setAttribute('data-theme', theme);
-    localStorage.setItem('av-theme', theme);
+    localStorage.setItem('as-theme', theme);
   }
 }
 
 
 /* =============================================
-   13. HERO CINEMATIC ENTRANCE
-   ============================================= */
-function initHeroEntrance() {
-  const items = document.querySelectorAll('[data-entrance]');
-  const delays = { tag: 0, title: 200, desc: 420, buttons: 620, social: 780 };
-
-  items.forEach(el => {
-    const key = el.getAttribute('data-entrance');
-    const delay = delays[key] ?? 0;
-    el.style.opacity = '0';
-    el.style.transform = 'translateY(30px)';
-
-    if (prefersReducedMotion) {
-      el.style.opacity = '1';
-      el.style.transform = 'none';
-      return;
-    }
-
-    setTimeout(() => {
-      el.style.transition = 'opacity 0.9s cubic-bezier(0.16,1,0.3,1), transform 0.9s cubic-bezier(0.16,1,0.3,1)';
-      el.style.opacity = '1';
-      el.style.transform = 'translateY(0)';
-    }, delay + 200);
-  });
-
-  // Hero image — enter from right
-  const heroImg = document.querySelector('.hero-image-wrapper');
-  if (heroImg && !prefersReducedMotion) {
-    heroImg.style.opacity = '0';
-    heroImg.style.transform = 'translateX(48px) scale(0.95)';
-    setTimeout(() => {
-      heroImg.style.transition = 'opacity 1s cubic-bezier(0.16,1,0.3,1), transform 1s cubic-bezier(0.16,1,0.3,1)';
-      heroImg.style.opacity = '1';
-      heroImg.style.transform = 'translateX(0) scale(1)';
-    }, 400);
-  }
-}
-
-
-/* =============================================
-   14. PARTICLE CANVAS
+   9. PARTICLE CANVAS
    ============================================= */
 function initParticles() {
   const canvas = document.getElementById('particleCanvas');
@@ -451,7 +405,7 @@ function initParticles() {
       vx: (Math.random() - 0.5) * 0.3,
       vy: (Math.random() - 0.5) * 0.3,
       alpha: Math.random() * 0.45 + 0.1,
-      color: Math.random() > 0.5 ? '50,205,50' : '0,255,255'
+      color: Math.random() > 0.5 ? '215,25,32' : '179,13,22'
     };
   }
 
@@ -464,7 +418,7 @@ function initParticles() {
         const dist = Math.sqrt(dx * dx + dy * dy);
         if (dist < 110) {
           ctx.beginPath();
-          ctx.strokeStyle = `rgba(50,205,50,${0.07 * (1 - dist / 110)})`;
+          ctx.strokeStyle = `rgba(215,25,32,${0.07 * (1 - dist / 110)})`;
           ctx.lineWidth = 0.5;
           ctx.moveTo(particles[i].x, particles[i].y);
           ctx.lineTo(particles[j].x, particles[j].y);
@@ -494,49 +448,7 @@ function initParticles() {
 
 
 /* =============================================
-   15. ADVANCED SCROLL REVEAL
-   ============================================= */
-function initScrollReveal() {
-  if (prefersReducedMotion) {
-    document.querySelectorAll('.reveal').forEach(el => el.classList.add('visible'));
-    return;
-  }
-
-  const configs = [
-    { sel: '.stat-card',            type: 'scale-in',    stagger: 90  },
-    { sel: '.timeline-card',        type: 'fade-left',   stagger: 120 },
-    { sel: '.project-card',         type: 'fade-up',     stagger: 80  },
-    { sel: '.hobby-card',           type: 'scale-in',    stagger: 70  },
-    { sel: '.tech-icon-card',       type: 'fade-up',     stagger: 50  },
-    { sel: '.skills-group',         type: 'fade-right',  stagger: 150 },
-    { sel: '.about-text',           type: 'fade-right',  stagger: 0   },
-    { sel: '.contact-info',         type: 'fade-left',   stagger: 0   },
-    { sel: '.contact-form-wrapper', type: 'fade-right',  stagger: 0   },
-    { sel: '.section-header',       type: 'fade-up',     stagger: 0   },
-  ];
-
-  configs.forEach(({ sel, type, stagger }) => {
-    document.querySelectorAll(sel).forEach((el, i) => {
-      el.classList.add('reveal', `reveal-${type}`);
-      if (stagger && i > 0) el.style.transitionDelay = `${i * stagger}ms`;
-    });
-  });
-
-  const observer = new IntersectionObserver(entries => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        entry.target.classList.add('visible');
-        observer.unobserve(entry.target);
-      }
-    });
-  }, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
-
-  document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
-}
-
-
-/* =============================================
-   16. SKILL BARS — ENHANCED WITH COUNTER
+   10. SKILL BARS — ENHANCED WITH COUNTER
    ============================================= */
 function initSkillBars() {
   const fills = document.querySelectorAll('.skill-bar-fill');
@@ -563,7 +475,7 @@ function initSkillBars() {
 
 
 /* =============================================
-   17. COUNT-UP ANIMATION
+   11. COUNT-UP ANIMATION
    ============================================= */
 function countUp(from, to, duration, cb) {
   if (prefersReducedMotion) { cb(to); return; }
@@ -576,28 +488,9 @@ function countUp(from, to, duration, cb) {
   requestAnimationFrame(frame);
 }
 
-function initCountUpNumbers() {
-  const cards = document.querySelectorAll('.stat-card');
-  const observer = new IntersectionObserver(entries => {
-    entries.forEach(entry => {
-      if (!entry.isIntersecting) return;
-      const h3 = entry.target.querySelector('h3');
-      if (!h3) return;
-      const text = h3.textContent.trim();
-      const match = text.match(/^(\d+)/);
-      if (!match) return;
-      const num = parseInt(match[1], 10);
-      const suffix = text.slice(match[1].length);
-      countUp(0, num, 1400, v => { h3.textContent = v + suffix; });
-      observer.unobserve(entry.target);
-    });
-  }, { threshold: 0.5 });
-  cards.forEach(c => observer.observe(c));
-}
-
 
 /* =============================================
-   18. ACTIVE NAV LINK ON SCROLL
+   12. ACTIVE NAV LINK ON SCROLL
    ============================================= */
 function initActiveNavLink() {
   const sections = document.querySelectorAll('section[id]');
@@ -637,7 +530,7 @@ function initActiveNavLink() {
 
 
 /* =============================================
-   19. BACK TO TOP BUTTON
+   13. BACK TO TOP BUTTON
    ============================================= */
 function initBackToTop() {
   const btn = document.getElementById('backToTop');
@@ -649,480 +542,5 @@ function initBackToTop() {
 
   btn.addEventListener('click', () => {
     window.scrollTo({ top: 0, behavior: prefersReducedMotion ? 'auto' : 'smooth' });
-  });
-}
-
-
-/* =============================================
-   20. TIMELINE ANIMATED LINE
-   ============================================= */
-function initTimelineAnimation() {
-  const timeline = document.querySelector('.timeline');
-  if (!timeline || prefersReducedMotion) return;
-
-  // Inject a real element to animate (can't animate ::before)
-  const line = document.createElement('div');
-  line.className = 'timeline-line-animated';
-  timeline.prepend(line);
-
-  const observer = new IntersectionObserver(entries => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        line.classList.add('animate');
-        observer.unobserve(entry.target);
-      }
-    });
-  }, { threshold: 0.05 });
-
-  observer.observe(timeline);
-}
-
-
-/* =============================================
-   21. MAGNETIC BUTTONS
-   ============================================= */
-function initMagneticButtons() {
-  if (prefersReducedMotion) return;
-
-  document.querySelectorAll('.btn-primary, .btn-outline').forEach(btn => {
-    btn.addEventListener('mousemove', e => {
-      const r = btn.getBoundingClientRect();
-      const dx = (e.clientX - (r.left + r.width / 2)) * 0.22;
-      const dy = (e.clientY - (r.top + r.height / 2)) * 0.22;
-      btn.style.transform = `translate(${dx}px,${dy}px) translateY(-2px)`;
-    });
-    btn.addEventListener('mouseleave', () => {
-      btn.style.transform = '';
-    });
-  });
-}
-
-
-/* =============================================
-   22. ACHIEVEMENTS & CERTIFICATIONS
-   ============================================= */
-
-/* ── Achievement Data — Add your own entries here ─── */
-const achievementsData = [
-  {
-    id: 'cert-cpp',
-    title: 'C++ Programming Certificate',
-    category: 'certificate',
-    organization: 'Coursera',
-    date: 'April 2025',
-    description: 'Completed a comprehensive C++ programming course covering OOP, STL, memory management, and modern C++ features with hands-on projects.',
-    skills: ['C++', 'OOP', 'STL'],
-    image: null, // Replace with actual certificate image path
-    credentialUrl: '#',
-    credentialId: 'CERT-CPP-2025-001'
-  },
-  {
-    id: 'course-webdev',
-    title: 'Web Development Course ',
-    category: 'course',
-    organization: 'Udemy',
-    date: 'Mar 2026',
-    description: 'Mastered full-stack web development fundamentals including HTML5, CSS3, responsive design, and JavaScript ES6+ With using AI tools for coding and debugging.',
-    skills: ['HTML', 'CSS', 'JavaScript', 'AI Tools'],
-    image: null,
-    credentialUrl: '#',
-    credentialId: 'UC-WEBDEV-2026'
-  },
-  {
-    id: 'Summer-Internship-JAVA',
-  title: 'Summer Internship — JAVA Development',
-    category: 'internship',
-    organization: 'TechCorp Solutions',
-    date: 'Jun 2025',
-    description: 'Worked as a JAVA Development Intern building scalable applications, collaborating with senior developers, and delivering Projects using AI-assisted coding tools to enhance productivity and code quality.',
-    skills: ['JAVA', 'Team Collaboration', 'AI Tools'],
-    image: null,
-    credentialUrl: '#',
-    credentialId: null
-  },
- /* {
-    id: 'course-dsa',
-    title: 'DSA Course ',
-    category: 'course',
-    organization: 'GeeksforGeeks',
-    date: 'Feb 2025',
-    description: 'Completed an intensive Data Structures and Algorithms course covering arrays, linked lists, trees, graphs, dynamic programming, and competitive coding strategies.',
-    skills: ['C++', 'DSA', 'Algorithms'],
-    image: null,
-    credentialUrl: '#',
-    credentialId: 'GFG-DSA-2025'
-  },*/
-
-  {
-    id: 'Hack-2026',
-    title: 'Hackathon -2026 RR Institute of Modern Technology',
-    category: 'achievement',
-    organization: 'RRGI INNOVATHON - 2026',
-    date: 'Apr 2025',
-    description: 'Participated in Hackthon RRGI and give our best to solve real-world problems using innovative solutions and collaborative teamwork. Our team developed a web application that addressed a pressing social issue, showcasing our technical skills and creativity.',
-    skills: ['Problem Solving', 'Teamwork', 'Web Dev'],
-    image: null,
-    credentialUrl: '#',
-    credentialId: null
-  },
-
- /* {
-    id: 'cert-python',
-    title: 'Python Programming Certificate',
-    category: 'certificate',
-    organization: 'Coursera',
-    date: 'Dec 2024',
-    description: 'Earned a certification in Python programming covering data types, control flow, functions, file handling, and introduction to libraries like NumPy and Pandas.',
-    skills: ['Python', 'Automation', 'Data Analysis'],
-    image: null,
-    credentialUrl: '#',
-    credentialId: 'CERT-PY-2024-042'
-  },*/
-
-  {
-    id: 'course-git',
-    title: 'Git & GitHub Masterclass',
-    category: 'course',
-    organization: 'Simplilearn',
-    date: 'Nov 2025',
-    description: 'All Basic version control with Git and GitHub including branching strategies, pull requests, collaboration workflows, and CI/CD fundamentals and push code to GitHub repository for real-world project collaboration.',
-    skills: ['Git', 'GitHub', 'Version Control'],
-    image: null,
-    credentialUrl: '#',
-    credentialId: null
-  },
-  {
-    id: 'award-academic',
-    title: 'Academic Excellence',
-    category: 'achievement',
-    organization: 'R R Institute of Modern Technology',
-    date: 'Aug 2025',
-    description: 'Recognized for outstanding academic performance and consistent contributions to the Computer Science department through projects and Academic Results.',
-    skills: ['Computer Science', 'Leadership'],
-    image: null,
-    credentialUrl: '#',
-    credentialId: null
-  }
-];
-
-function initAchievements() {
-  const grid = document.getElementById('achievementsGrid');
-  const countersEl = document.getElementById('achievementCounters');
-  const filterBtns = document.querySelectorAll('[data-achievement-filter]');
-  const viewAllWrap = document.getElementById('achievementsViewAllWrap');
-  const viewAllBtn = document.getElementById('achievementsViewAllBtn');
-
-  if (!grid) return;
-
-  const INITIAL_VISIBLE = 6;
-  let showAll = false;
-  let currentFilter = 'all';
-
-  /* ── Render Counters ─── */
-  renderCounters();
-
-  /* ── Render Cards ─── */
-  renderCards();
-
-  /* ── Setup Filters ─── */
-  filterBtns.forEach(btn => {
-    btn.addEventListener('click', () => {
-      filterBtns.forEach(b => b.classList.remove('active'));
-      btn.classList.add('active');
-      currentFilter = btn.getAttribute('data-achievement-filter');
-      showAll = false;
-      if (viewAllBtn) {
-        viewAllBtn.querySelector('span').textContent = 'View All Achievements';
-      }
-      renderCards();
-    });
-  });
-
-  /* ── Setup View All ─── */
-  if (viewAllBtn) {
-    viewAllBtn.addEventListener('click', () => {
-      showAll = !showAll;
-      viewAllBtn.querySelector('span').textContent = showAll ? 'Show Less' : 'View All Achievements';
-      renderCards();
-    });
-  }
-
-  /* ── Setup Modal ─── */
-  initCertModal();
-
-  /* ── Render counters ─── */
-  function renderCounters() {
-    if (!countersEl) return;
-
-    const counts = {};
-    const labels = {
-      certificate: { label: 'Certificates', icon: 'fa-certificate' },
-      course: { label: 'Courses', icon: 'fa-book' },
-      internship: { label: 'Internships', icon: 'fa-briefcase' },
-      achievement: { label: 'Achievements', icon: 'fa-trophy' }
-    };
-
-    achievementsData.forEach(a => {
-      counts[a.category] = (counts[a.category] || 0) + 1;
-    });
-
-    const pills = [];
-    Object.entries(labels).forEach(([cat, meta], i) => {
-      const count = counts[cat] || 0;
-      if (count === 0) return;
-      if (i > 0 && pills.length > 0) {
-        pills.push('<span class="achievement-counter-separator">|</span>');
-      }
-      pills.push(`
-        <div class="achievement-counter-pill">
-          <i class="fa-solid ${meta.icon}"></i>
-          <span class="counter-num" data-count="${count}">${count}+</span>
-          ${meta.label}
-        </div>
-      `);
-    });
-
-    countersEl.innerHTML = pills.join('');
-  }
-
-  /* ── Render cards ─── */
-  function renderCards() {
-    const filtered = currentFilter === 'all'
-      ? achievementsData
-      : achievementsData.filter(a => a.category === currentFilter);
-
-    const visible = showAll ? filtered : filtered.slice(0, INITIAL_VISIBLE);
-
-    grid.innerHTML = visible.map(a => createCardHTML(a)).join('');
-
-    // Show/hide "View All" button
-    if (viewAllWrap) {
-      viewAllWrap.style.display = filtered.length > INITIAL_VISIBLE ? 'block' : 'none';
-    }
-
-    // Attach card click handlers for modal
-    grid.querySelectorAll('.achievement-view-cert-btn').forEach(btn => {
-      btn.addEventListener('click', (e) => {
-        e.preventDefault();
-        const id = btn.getAttribute('data-achievement-id');
-        openCertModal(id);
-      });
-    });
-
-    // Lazy load images
-    lazyLoadImages();
-
-    // Re-register custom cursor interactives on new cards
-    const cursor = document.getElementById('cursor');
-    const follower = document.getElementById('cursorFollower');
-    if (cursor && follower && !prefersReducedMotion) {
-      grid.querySelectorAll('.achievement-card').forEach(card => {
-        card.addEventListener('mouseenter', () => {
-          cursor.classList.add('cursor-hover');
-          follower.classList.add('cursor-hover');
-        });
-        card.addEventListener('mouseleave', () => {
-          cursor.classList.remove('cursor-hover');
-          follower.classList.remove('cursor-hover');
-        });
-      });
-    }
-  }
-
-  /* ── Create card HTML ─── */
-  function createCardHTML(a) {
-    const categoryMeta = {
-      certificate: { icon: 'fa-certificate', label: 'Certificate' },
-      course: { icon: 'fa-book', label: 'Course' },
-      internship: { icon: 'fa-briefcase', label: 'Internship' },
-      achievement: { icon: 'fa-trophy', label: 'Achievement' }
-    };
-    const meta = categoryMeta[a.category] || { icon: 'fa-star', label: 'Other' };
-
-    const imageHTML = a.image
-      ? `<img src="data:image/gif;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs=" data-src="${a.image}" alt="${a.title}" loading="lazy" />`
-      : `<div class="achievement-placeholder-img">
-           <i class="fa-solid ${meta.icon} placeholder-icon"></i>
-           <span class="placeholder-label">Replace with certificate image</span>
-         </div>`;
-
-    const credentialHTML = a.credentialId
-      ? `<div class="achievement-card-credential"><strong>ID:</strong> ${a.credentialId}</div>`
-      : '';
-
-    const skillsHTML = a.skills.map(s => `<span>${s}</span>`).join('');
-
-    return `
-      <article class="achievement-card" data-achievement-category="${a.category}" data-achievement-id="${a.id}">
-        <div class="achievement-card-image">
-          ${imageHTML}
-          <div class="achievement-card-badge">
-            <i class="fa-solid ${meta.icon}"></i>
-            ${meta.label}
-          </div>
-        </div>
-        <div class="achievement-card-body">
-          <div class="achievement-card-header">
-            <h3 class="achievement-card-title">${a.title}</h3>
-            <span class="achievement-card-date">${a.date}</span>
-          </div>
-          <div class="achievement-card-org">
-            <i class="fa-solid fa-building"></i>
-            ${a.organization}
-          </div>
-          <p class="achievement-card-desc">${a.description}</p>
-          ${credentialHTML}
-          <div class="achievement-card-skills">${skillsHTML}</div>
-        </div>
-        <div class="achievement-card-actions">
-          <button class="btn btn-outline achievement-view-cert-btn" data-achievement-id="${a.id}">
-            <i class="fa-solid fa-eye"></i> View Certificate
-          </button>
-        </div>
-      </article>
-    `;
-  }
-
-  /* ── Lazy load images ─── */
-  function lazyLoadImages() {
-    const images = grid.querySelectorAll('img[data-src]');
-    if (images.length === 0) return;
-
-    const imgObserver = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        if (!entry.isIntersecting) return;
-        const img = entry.target;
-        img.src = img.getAttribute('data-src');
-        img.removeAttribute('data-src');
-        imgObserver.unobserve(img);
-      });
-    }, { rootMargin: '100px' });
-
-    images.forEach(img => imgObserver.observe(img));
-  }
-}
-
-
-/* =============================================
-   23. CERTIFICATE PREVIEW MODAL
-   ============================================= */
-function initCertModal() {
-  const overlay = document.getElementById('certModalOverlay');
-  const closeBtn = document.getElementById('certModalClose');
-  const modalImg = document.getElementById('certModalImage');
-  const modalInfo = document.getElementById('certModalInfo');
-  const zoomInBtn = document.getElementById('certModalZoomIn');
-  const zoomOutBtn = document.getElementById('certModalZoomOut');
-  const zoomResetBtn = document.getElementById('certModalZoomReset');
-
-  if (!overlay) return;
-
-  let currentZoom = 1;
-  const ZOOM_STEP = 0.25;
-  const ZOOM_MAX = 3;
-  const ZOOM_MIN = 0.5;
-
-  /* ── Close modal ─── */
-  function closeModal() {
-    overlay.classList.remove('active');
-    document.body.style.overflow = '';
-    currentZoom = 1;
-    if (modalImg) modalImg.style.transform = `scale(1)`;
-    // Use a slight delay to let CSS transition finish before hiding
-    setTimeout(() => {
-      if (!overlay.classList.contains('active')) {
-        overlay.style.display = 'none';
-      }
-    }, 400);
-  }
-
-  if (closeBtn) closeBtn.addEventListener('click', closeModal);
-
-  // Click outside modal to close
-  overlay.addEventListener('click', (e) => {
-    if (e.target === overlay) closeModal();
-  });
-
-  // Keyboard Esc to close
-  document.addEventListener('keydown', (e) => {
-    if (e.key === 'Escape' && overlay.classList.contains('active')) {
-      closeModal();
-    }
-  });
-
-  /* ── Zoom controls ─── */
-  function setZoom(level) {
-    currentZoom = Math.max(ZOOM_MIN, Math.min(ZOOM_MAX, level));
-    if (modalImg) modalImg.style.transform = `scale(${currentZoom})`;
-  }
-
-  if (zoomInBtn) zoomInBtn.addEventListener('click', () => setZoom(currentZoom + ZOOM_STEP));
-  if (zoomOutBtn) zoomOutBtn.addEventListener('click', () => setZoom(currentZoom - ZOOM_STEP));
-  if (zoomResetBtn) zoomResetBtn.addEventListener('click', () => setZoom(1));
-}
-
-/* ── Open modal with achievement data ─── */
-function openCertModal(achievementId) {
-  const overlay = document.getElementById('certModalOverlay');
-  const modalImg = document.getElementById('certModalImage');
-  const modalInfo = document.getElementById('certModalInfo');
-
-  if (!overlay) return;
-
-  const achievement = achievementsData.find(a => a.id === achievementId);
-  if (!achievement) return;
-
-  // Set image
-  if (achievement.image) {
-    modalImg.src = achievement.image;
-    modalImg.style.display = 'block';
-    modalImg.parentElement.querySelector('.achievement-placeholder-img')?.remove();
-  } else {
-    modalImg.style.display = 'none';
-    // Show placeholder in modal
-    const wrap = modalImg.parentElement;
-    const existing = wrap.querySelector('.achievement-placeholder-img');
-    if (!existing) {
-      const categoryMeta = {
-        certificate: 'fa-certificate',
-        course: 'fa-book',
-        internship: 'fa-briefcase',
-        achievement: 'fa-trophy'
-      };
-      const icon = categoryMeta[achievement.category] || 'fa-star';
-      const placeholder = document.createElement('div');
-      placeholder.className = 'achievement-placeholder-img';
-      placeholder.style.minHeight = '250px';
-      placeholder.innerHTML = `<i class="fa-solid ${icon} placeholder-icon" style="font-size:5rem;"></i>
-        <span class="placeholder-label">Certificate image placeholder</span>`;
-      wrap.appendChild(placeholder);
-    }
-  }
-
-  // Set info
-  const credentialHTML = achievement.credentialId
-    ? `<div class="cert-modal-info-credential"><strong>Credential ID:</strong> ${achievement.credentialId}</div>`
-    : '';
-
-  const skillsHTML = achievement.skills.map(s => `<span>${s}</span>`).join('');
-
-  modalInfo.innerHTML = `
-    <h3 class="cert-modal-info-title">${achievement.title}</h3>
-    <div class="cert-modal-info-org"><i class="fa-solid fa-building"></i> ${achievement.organization}</div>
-    <div class="cert-modal-info-date"><i class="fa-solid fa-calendar"></i> ${achievement.date}</div>
-    <p class="cert-modal-info-desc">${achievement.description}</p>
-    ${credentialHTML}
-    <div class="cert-modal-info-skills">${skillsHTML}</div>
-  `;
-
-  // Show modal
-  overlay.style.display = 'flex';
-  document.body.style.overflow = 'hidden';
-  // Trigger animation on next frame
-  requestAnimationFrame(() => {
-    requestAnimationFrame(() => {
-      overlay.classList.add('active');
-      overlay.focus();
-    });
   });
 }

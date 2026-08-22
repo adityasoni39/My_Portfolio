@@ -1,5 +1,5 @@
 /* =================================================================
-   AVINASH VERMA PORTFOLIO — PREMIUM ANIMATIONS ENGINE
+   ADITYA SONI PORTFOLIO — PREMIUM ANIMATIONS ENGINE
    Powered by Anime.js 3.2 + GSAP 3 ScrollTrigger
    ================================================================= */
 
@@ -417,11 +417,10 @@
 
 
     /* ─────────────────────────────────────────────────────────────
-       8. PROJECTS — CATEGORY FILTERS & ANIME.JS 3D TILT PHYSICS
+       8. PROJECTS — 3D TILT PHYSICS
        ───────────────────────────────────────────────────────────── */
     (function projectCards() {
       const projectsGrid = document.querySelector('.projects-grid');
-      const filterBtns = document.querySelectorAll('.project-filters .filter-btn');
       const cards = document.querySelectorAll('.project-card');
 
       if (projectsGrid) {
@@ -442,46 +441,6 @@
           }
         });
       }
-
-      /* Category filtering transition with Anime.js */
-      filterBtns.forEach(btn => {
-        btn.addEventListener('click', () => {
-          filterBtns.forEach(b => b.classList.remove('active'));
-          btn.classList.add('active');
-
-          const filterVal = btn.getAttribute('data-filter');
-
-          anime({
-            targets: '.project-card',
-            opacity: 0,
-            scale: 0.85,
-            translateY: 20,
-            duration: 250,
-            easing: 'easeInCubic',
-            complete: () => {
-              cards.forEach(card => {
-                const cat = card.getAttribute('data-category') || '';
-                if (filterVal === 'all' || cat.includes(filterVal)) {
-                  card.style.display = 'block';
-                } else {
-                  card.style.display = 'none';
-                }
-              });
-
-              const visibleCards = Array.from(cards).filter(c => c.style.display !== 'none');
-              anime({
-                targets: visibleCards,
-                opacity: [0, 1],
-                scale: [0.85, 1],
-                translateY: [20, 0],
-                delay: anime.stagger(90),
-                duration: 650,
-                easing: 'spring(1, 80, 12, 0)'
-              });
-            }
-          });
-        });
-      });
 
       /* Cursor lens mode on project card hover */
       const follower = document.getElementById('cursorFollower');
@@ -523,143 +482,8 @@
       });
     })();
 
-    /* ─────────────────────────────────────────────────────────────
-       16. ACHIEVEMENTS — SCROLL ENTRANCE, 3D TILT & FILTER ANIMATION
-       ───────────────────────────────────────────────────────────── */
-    (function achievementsSection() {
-      const grid = document.querySelector('.achievements-grid');
-      const counters = document.querySelector('.achievement-counters');
-      const filters = document.querySelector('.achievement-filters');
 
-      /* Entrance animation for achievement cards (called on initial load + filter) */
-      function animateCards() {
-        const cards = grid?.querySelectorAll('.achievement-card');
-        if (!cards || cards.length === 0) return;
-
-        anime({
-          targets: Array.from(cards),
-          opacity: [0, 1],
-          translateY: [50, 0],
-          scale: [0.92, 1],
-          delay: anime.stagger(100),
-          duration: 800,
-          easing: 'spring(1, 78, 10, 0)'
-        });
-
-        /* 3D Tilt physics on hover */
-        cards.forEach(card => {
-          card.addEventListener('mousemove', e => {
-            const r = card.getBoundingClientRect();
-            const x = (e.clientX - r.left) / r.width - 0.5;
-            const y = (e.clientY - r.top) / r.height - 0.5;
-            anime({
-              targets: card,
-              rotateX: -y * 10,
-              rotateY: x * 10,
-              translateZ: 12,
-              duration: 400,
-              easing: 'easeOutQuad'
-            });
-          });
-
-          card.addEventListener('mouseleave', () => {
-            anime({
-              targets: card,
-              rotateX: 0,
-              rotateY: 0,
-              translateZ: 0,
-              duration: 800,
-              easing: 'spring(1, 75, 10, 0)'
-            });
-          });
-        });
-      }
-
-      /* Initial scroll-triggered entrance */
-      if (grid) {
-        ScrollTrigger.create({
-          trigger: grid,
-          start: 'top 82%',
-          once: true,
-          onEnter: animateCards
-        });
-
-        /* Watch for DOM changes (filter/view-all re-renders cards) */
-        const observer = new MutationObserver(() => {
-          animateCards();
-        });
-        observer.observe(grid, { childList: true });
-      }
-
-      /* Counter pills entrance */
-      if (counters) {
-        ScrollTrigger.create({
-          trigger: counters,
-          start: 'top 85%',
-          once: true,
-          onEnter: () => {
-            anime({
-              targets: '.achievement-counter-pill',
-              opacity: [0, 1],
-              scale: [0.8, 1],
-              translateY: [16, 0],
-              delay: anime.stagger(80),
-              duration: 700,
-              easing: 'spring(1, 80, 12, 0)'
-            });
-
-            anime({
-              targets: '.achievement-counter-separator',
-              opacity: [0, 1],
-              delay: anime.stagger(80, { start: 100 }),
-              duration: 500,
-              easing: 'easeOutCubic'
-            });
-          }
-        });
-      }
-
-      /* Filter buttons entrance */
-      if (filters) {
-        ScrollTrigger.create({
-          trigger: filters,
-          start: 'top 85%',
-          once: true,
-          onEnter: () => {
-            anime({
-              targets: '.achievement-filters .filter-btn',
-              opacity: [0, 1],
-              translateY: [12, 0],
-              delay: anime.stagger(60),
-              duration: 600,
-              easing: 'easeOutCubic'
-            });
-          }
-        });
-      }
-
-      /* View All button entrance */
-      const viewAllWrap = document.querySelector('.achievements-view-all-wrap');
-      if (viewAllWrap) {
-        ScrollTrigger.create({
-          trigger: viewAllWrap,
-          start: 'top 90%',
-          once: true,
-          onEnter: () => {
-            anime({
-              targets: viewAllWrap,
-              opacity: [0, 1],
-              translateY: [20, 0],
-              duration: 800,
-              easing: 'easeOutCubic'
-            });
-          }
-        });
-      }
-    })();
-
-
-    /* Click ripple for buttons (includes achievement filter buttons) */
+    /* Click ripple for buttons */
     (function buttonRipples() {
       document.querySelectorAll('.btn, .filter-btn').forEach(btn => {
         btn.addEventListener('click', function (e) {
@@ -678,54 +502,7 @@
 
 
     /* ─────────────────────────────────────────────────────────────
-       9. HOBBIES SECTION — STAGGER & HOVER FLOAT
-       ───────────────────────────────────────────────────────────── */
-    (function hobbiesSection() {
-      const grid = document.querySelector('.hobbies-grid');
-      if (!grid) return;
-
-      ScrollTrigger.create({
-        trigger: grid,
-        start: 'top 82%',
-        once: true,
-        onEnter: () => {
-          anime({
-            targets: '.hobby-card',
-            opacity: [0, 1],
-            scale: [0.8, 1],
-            translateY: [35, 0],
-            delay: anime.stagger(100),
-            duration: 850,
-            easing: 'spring(1, 80, 12, 0)'
-          });
-        }
-      });
-
-      document.querySelectorAll('.hobby-card').forEach(card => {
-        card.addEventListener('mouseenter', () => {
-          anime({
-            targets: card,
-            translateY: -10,
-            scale: 1.04,
-            duration: 400,
-            easing: 'spring(1, 85, 12, 0)'
-          });
-        });
-        card.addEventListener('mouseleave', () => {
-          anime({
-            targets: card,
-            translateY: 0,
-            scale: 1,
-            duration: 600,
-            easing: 'easeOutCubic'
-          });
-        });
-      });
-    })();
-
-
-    /* ─────────────────────────────────────────────────────────────
-       10. CONTACT — SPLIT SLIDE & STAGGER REVEAL
+       9. CONTACT — SPLIT SLIDE & STAGGER REVEAL
        ───────────────────────────────────────────────────────────── */
     (function contactSection() {
       const contactGrid = document.querySelector('.contact-grid');
@@ -767,7 +544,7 @@
 
 
     /* ─────────────────────────────────────────────────────────────
-       11. MAGNETIC BUTTONS — ANIME.JS ELASTIC SPRING
+       10. MAGNETIC BUTTONS — ANIME.JS ELASTIC SPRING
        ───────────────────────────────────────────────────────────── */
     (function magneticButtons() {
       document.querySelectorAll('.btn').forEach(btn => {
@@ -818,7 +595,7 @@
 
 
     /* ─────────────────────────────────────────────────────────────
-       12. FOOTER REVEAL
+       11. FOOTER REVEAL
        ───────────────────────────────────────────────────────────── */
     (function footerReveal() {
       gsap.fromTo('.footer-content',
@@ -849,7 +626,7 @@
 
 
     /* ─────────────────────────────────────────────────────────────
-       13. PROFILE AVATAR — Hover interaction
+       12. PROFILE AVATAR — Hover interaction
        ───────────────────────────────────────────────────────────── */
     (function avatarHover() {
       const frame = document.querySelector('.hero-image-frame');
@@ -864,7 +641,7 @@
 
 
     /* ─────────────────────────────────────────────────────────────
-       14. FLOATING BADGES — Continuous gentle motion
+       13. FLOATING BADGES — Continuous gentle motion
        ───────────────────────────────────────────────────────────── */
     (function floatingBadges() {
       gsap.to('.badge-1', {
@@ -880,7 +657,7 @@
 
 
     /* ─────────────────────────────────────────────────────────────
-       15. TECH ICON CARDS — Hover 3D flip tease
+       14. TECH ICON CARDS — Hover 3D flip tease
        ───────────────────────────────────────────────────────────── */
     (function techIconHover() {
       document.querySelectorAll('.tech-icon-card').forEach(card => {

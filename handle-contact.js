@@ -24,14 +24,14 @@ export default async function(req) {
     }
 
     // 1. Generate AI Response
-    let aiResponse = "Thank you for reaching out! Avinash will get back to you shortly.";
+    let aiResponse = "Thank you for reaching out! Aditya will get back to you shortly.";
     try {
       const openai = new OpenAI({
         baseURL: 'https://openrouter.ai/api/v1',
         apiKey: Deno.env.get('OPENROUTER_API_KEY'),
       });
 
-      const prompt = `You are a friendly and professional assistant for a web developer named Avinash Verma. \nA user named ${name} (${email}) has just submitted a contact form on his portfolio with the following message:\n"${message}"\n\nWrite a short, polite, and enthusiastic reply acknowledging their message. Keep it under 3 sentences. Thank them for reaching out and assure them Avinash will get back to them soon.`;
+      const prompt = `You are a friendly and professional assistant for a developer and AI enthusiast named Aditya Soni. \nA user named ${name} (${email}) has just submitted a contact form on his portfolio with the following message:\n"${message}"\n\nWrite a short, polite, and enthusiastic reply acknowledging their message. Keep it under 3 sentences. Thank them for reaching out and assure them Aditya will get back to them soon.`;
 
       const completion = await openai.chat.completions.create({
         model: 'openai/gpt-4o-mini',
@@ -64,9 +64,9 @@ export default async function(req) {
       console.error("Database connection error:", dbErr);
     }
 
-    // 3. Send Email to Avinash via FormSubmit (Server-to-Server, bypasses CORS)
+    // 3. Send Email to Aditya via FormSubmit (Server-to-Server, bypasses CORS)
     try {
-      await fetch("https://formsubmit.co/ajax/avinashverma3939@gmail.com", {
+      await fetch("https://formsubmit.co/ajax/aryansoni202006@gmail.com", {
         method: "POST",
         headers: {
           'Content-Type': 'application/json',

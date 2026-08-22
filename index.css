@@ -1,46 +1,47 @@
 /* =============================================
-   AVINASH VERMA PORTFOLIO — STYLESHEET
-   Modern Dark Theme | Poppins + Space Mono
+   ADITYA SONI PORTFOLIO — STYLESHEET
+   Modern Dark Theme | Crimson & Carbon Palette
    ============================================= */
 
 /* ---- Theme System ---- */
 :root,
 [data-theme="dark"] {
-  --bg-primary: #0a0a0f;
-  --bg-secondary: #0f0f1a;
-  --bg-card: #13131f;
-  --bg-card-hover: #1a1a2e;
-  --accent: #32cd32;
-  --accent-glow: rgba(50, 205, 50, 0.3);
-  --accent-2: #00ffff;
-  --text-primary: #e8e8f0;
-  --text-secondary: #8888aa;
-  --text-muted: #55556a;
-  --border: rgba(50, 205, 50, 0.15);
-  --border-hover: rgba(50, 205, 50, 0.5);
+  --bg-primary: #090606;
+  --bg-secondary: #110e0f;
+  --bg-card: #181617;
+  --bg-card-hover: #221d1f;
+  --accent: #D71920;
+  --accent-glow: rgba(215, 25, 32, 0.35);
+  --accent-2: #ff414d;
+  --accent-primary: #B30D16;
+  --text-primary: #F3F4F4;
+  --text-secondary: #B7B5B5;
+  --text-muted: #7c7778;
+  --border: #54060A;
+  --border-hover: rgba(215, 25, 32, 0.55);
   --font-main: 'Poppins', sans-serif;
   --font-mono: 'Space Mono', monospace;
   --radius: 12px;
   --radius-lg: 20px;
-  --shadow: 0 4px 30px rgba(0,0,0,0.4);
+  --shadow: 0 4px 30px rgba(0,0,0,0.6);
   --transition: 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   --section-padding: 100px 0;
 }
 
 [data-theme="light"] {
-  --bg-primary: #f8fafc;
-  --bg-secondary: #f1f5f9;
+  --bg-primary: #fdfbfb;
+  --bg-secondary: #f6f1f1;
   --bg-card: #ffffff;
-  --bg-card-hover: #ffffff;
-  --accent: #16a34a;
-  --accent-glow: rgba(22, 163, 74, 0.25);
-  --accent-2: #0284c7;
-  --text-primary: #0f172a;
-  --text-secondary: #475569;
-  --text-muted: #64748b;
-  --border: rgba(22, 163, 74, 0.2);
-  --border-hover: rgba(22, 163, 74, 0.5);
-  --shadow: 0 4px 20px rgba(0,0,0,0.08);
+  --bg-card-hover: #faefef;
+  --accent: #B30D16;
+  --accent-glow: rgba(179, 13, 22, 0.25);
+  --accent-2: #D71920;
+  --accent-primary: #B30D16;
+  --text-primary: #1a0f10;
+  --text-secondary: #5a4b4c;
+  --text-muted: #8c7b7c;
+  --border: rgba(179, 13, 22, 0.22);
+  --border-hover: rgba(215, 25, 32, 0.55);
 }
 
 html.theme-transitioning,
@@ -130,8 +131,7 @@ button { cursor: none; border: none; background: none; }
 
 /* Alternating section backgrounds */
 .about-section,
-.skills-section,
-.hobbies-section { background: var(--bg-secondary); }
+.skills-section { background: var(--bg-secondary); }
 
 /* =============================================
    SECTION HEADERS
@@ -154,6 +154,7 @@ button { cursor: none; border: none; background: none; }
   font-size: clamp(2rem, 4vw, 3rem);
   font-weight: 700;
   line-height: 1.2;
+  color: var(--text-primary);
 }
 
 .highlight {
@@ -168,7 +169,7 @@ button { cursor: none; border: none; background: none; }
   left: 0;
   width: 100%;
   height: 3px;
-  background: linear-gradient(90deg, var(--accent), transparent);
+  background: linear-gradient(90deg, var(--accent), var(--accent-primary), transparent);
   border-radius: 2px;
 }
 
@@ -194,7 +195,7 @@ button { cursor: none; border: none; background: none; }
   content: '';
   position: absolute;
   inset: 0;
-  background: rgba(255,255,255,0.07);
+  background: rgba(255,255,255,0.08);
   opacity: 0;
   transition: opacity 0.3s;
 }
@@ -202,14 +203,14 @@ button { cursor: none; border: none; background: none; }
 .btn:hover::before { opacity: 1; }
 
 .btn-primary {
-  background: var(--accent);
+  background: linear-gradient(135deg, var(--accent), var(--accent-primary));
   color: #fff;
-  box-shadow: 0 0 20px var(--accent-glow);
+  box-shadow: 0 4px 20px var(--accent-glow);
 }
 
 .btn-primary:hover {
   transform: translateY(-2px);
-  box-shadow: 0 0 35px var(--accent-glow);
+  box-shadow: 0 6px 30px rgba(215, 25, 32, 0.5);
 }
 
 .btn-outline {
@@ -221,6 +222,7 @@ button { cursor: none; border: none; background: none; }
   background: var(--accent);
   color: #fff;
   transform: translateY(-2px);
+  box-shadow: 0 4px 20px var(--accent-glow);
 }
 
 .btn-full { width: 100%; justify-content: center; }
@@ -236,9 +238,9 @@ button { cursor: none; border: none; background: none; }
   transition: var(--transition);
 }
 
-/* Scrolled state — added via JS */
+/* Scrolled state */
 .navbar.scrolled {
-  background: rgba(10, 10, 15, 0.92);
+  background: rgba(9, 6, 6, 0.94);
   backdrop-filter: blur(20px);
   -webkit-backdrop-filter: blur(20px);
   border-bottom: 1px solid var(--border);
@@ -271,7 +273,7 @@ button { cursor: none; border: none; background: none; }
   align-items: center;
   justify-content: center;
   position: relative;
-  box-shadow: 0 0 10px rgba(50, 205, 50, 0.25);
+  box-shadow: 0 0 10px var(--accent-glow);
   flex-shrink: 0;
 }
 
@@ -319,7 +321,7 @@ button { cursor: none; border: none; background: none; }
 }
 
 .logo-text {
-  color: #ffffff;
+  color: var(--text-primary);
   font-weight: 800;
   margin: 0 2px;
 }
@@ -334,7 +336,7 @@ button { cursor: none; border: none; background: none; }
 .nav-link {
   font-size: 0.92rem;
   font-weight: 500;
-  color: #8f8fa8;
+  color: var(--text-secondary);
   padding: 6px 0;
   transition: color 0.25s ease, font-weight 0.25s ease;
   position: relative;
@@ -348,18 +350,18 @@ button { cursor: none; border: none; background: none; }
   left: 0;
   width: 0; 
   height: 2.5px;
-  background: var(--accent);
+  background: linear-gradient(90deg, var(--accent), var(--accent-primary));
   transition: width 0.3s cubic-bezier(0.16, 1, 0.3, 1);
   border-radius: 2px;
   box-shadow: 0 0 8px var(--accent-glow);
 }
 
 .nav-link:hover {
-  color: #ffffff;
+  color: var(--text-primary);
 }
 
 .nav-link.active {
-  color: #ffffff;
+  color: var(--text-primary);
   font-weight: 700;
 }
 
@@ -416,6 +418,7 @@ button { cursor: none; border: none; background: none; }
   background-size: 60px 60px;
   mask-image: radial-gradient(ellipse 80% 70% at 50% 50%, black 40%, transparent 100%);
   -webkit-mask-image: radial-gradient(ellipse 80% 70% at 50% 50%, black 40%, transparent 100%);
+  opacity: 0.7;
 }
 
 /* Glow orb */
@@ -424,7 +427,7 @@ button { cursor: none; border: none; background: none; }
   position: absolute;
   top: 20%; left: 60%;
   width: 500px; height: 500px;
-  background: radial-gradient(circle, rgba(50, 205, 50, 0.12) 0%, transparent 70%);
+  background: radial-gradient(circle, rgba(215, 25, 32, 0.12) 0%, transparent 70%);
   pointer-events: none;
 }
 
@@ -446,7 +449,7 @@ button { cursor: none; border: none; background: none; }
   display: inline-flex;
   align-items: center;
   gap: 8px;
-  background: rgba(50, 205, 50, 0.1);
+  background: rgba(215, 25, 32, 0.1);
   border: 1px solid var(--border);
   border-radius: 50px;
   padding: 6px 16px;
@@ -465,8 +468,8 @@ button { cursor: none; border: none; background: none; }
 }
 
 @keyframes pulse {
-  0%, 100% { box-shadow: 0 0 0 0 rgba(50, 205, 50, 0.4); }
-  50% { box-shadow: 0 0 0 6px rgba(50, 205, 50, 0); }
+  0%, 100% { box-shadow: 0 0 0 0 rgba(215, 25, 32, 0.4); }
+  50% { box-shadow: 0 0 0 6px rgba(215, 25, 32, 0); }
 }
 
 /* Hero Title */
@@ -475,6 +478,7 @@ button { cursor: none; border: none; background: none; }
   font-weight: 700;
   line-height: 1.15;
   margin-bottom: 20px;
+  color: var(--text-primary);
   animation: fadeInUp 0.7s 0.1s ease both;
 }
 
@@ -487,8 +491,6 @@ button { cursor: none; border: none; background: none; }
   min-height: 2.4rem;
   margin-top: 10px;
 }
-
-
 
 .hero-description {
   color: var(--text-secondary);
@@ -516,6 +518,7 @@ button { cursor: none; border: none; background: none; }
 .social-icon {
   width: 42px; height: 42px;
   border: 1.5px solid var(--border);
+  background: var(--bg-card);
   border-radius: 10px;
   display: flex;
   align-items: center;
@@ -555,13 +558,13 @@ button { cursor: none; border: none; background: none; }
 
 .ring-1 {
   inset: -20px;
-  opacity: 0.2;
+  opacity: 0.25;
   animation: rotate 10s linear infinite;
 }
 
 .ring-2 {
   inset: -40px;
-  opacity: 0.1;
+  opacity: 0.15;
   border-style: dashed;
   animation: rotate 18s linear infinite reverse;
 }
@@ -584,13 +587,11 @@ button { cursor: none; border: none; background: none; }
   font-weight: 700;
   color: var(--accent);
   font-family: var(--font-mono);
-  box-shadow: 0 0 60px var(--accent-glow), inset 0 0 40px rgba(50, 205, 50, 0.05);
+  box-shadow: 0 0 50px var(--accent-glow), inset 0 0 30px rgba(215, 25, 32, 0.15);
   position: relative;
   z-index: 2;
   overflow: hidden;
 }
-
-/* If using actual image: .profile-avatar img { width:100%; height:100%; object-fit:cover; } */
 
 /* Floating Badges */
 .badge {
@@ -604,10 +605,12 @@ button { cursor: none; border: none; background: none; }
   gap: 6px;
   font-size: 0.78rem;
   font-weight: 600;
+  color: var(--text-primary);
   white-space: nowrap;
   z-index: 3;
   backdrop-filter: blur(10px);
   animation: float 4s ease-in-out infinite;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
 }
 
 .badge i { color: var(--accent); }
@@ -662,7 +665,7 @@ button { cursor: none; border: none; background: none; }
 
 @keyframes fadeInRight {
   from { opacity: 0; transform: translateX(40px); }
-  to { opacity: 1; transform: translateX(0); }
+  to { opacity: 1; transform: translateY(0); }
 }
 
 @keyframes fadeIn {
@@ -730,7 +733,7 @@ button { cursor: none; border: none; background: none; }
 .cursor-follower.cursor-view-lens {
   width: 64px !important;
   height: 64px !important;
-  background: rgba(50, 205, 50, 0.12) !important;
+  background: rgba(215, 25, 32, 0.15) !important;
   border-color: var(--accent) !important;
   box-shadow: 0 0 25px var(--accent-glow) !important;
   backdrop-filter: blur(4px);
@@ -745,7 +748,7 @@ button { cursor: none; border: none; background: none; }
 .btn-ripple-fx {
   position: absolute;
   border-radius: 50%;
-  background: rgba(255, 255, 255, 0.4);
+  background: rgba(255, 255, 255, 0.3);
   transform: scale(0);
   animation: rippleAnim 0.6s linear;
   pointer-events: none;
@@ -785,7 +788,7 @@ button { cursor: none; border: none; background: none; }
 }
 
 .stat-card:hover {
-  border-color: var(--accent);
+  border-color: var(--border-hover);
   transform: translateY(-4px);
   box-shadow: 0 12px 30px var(--accent-glow);
 }
@@ -842,7 +845,7 @@ button { cursor: none; border: none; background: none; }
 }
 
 .detail-item:hover {
-  background: rgba(50, 205, 50, 0.05);
+  background: rgba(215, 25, 32, 0.08);
   color: var(--text-primary);
 }
 
@@ -874,7 +877,7 @@ button { cursor: none; border: none; background: none; }
   left: 18px;
   top: 0; bottom: 0;
   width: 2px;
-  background: linear-gradient(to bottom, var(--accent), transparent);
+  background: linear-gradient(to bottom, var(--accent), var(--border), transparent);
 }
 
 .timeline-item {
@@ -912,7 +915,7 @@ button { cursor: none; border: none; background: none; }
 
 .timeline-card:hover {
   border-color: var(--border-hover);
-  box-shadow: 0 8px 30px rgba(0,0,0,0.3);
+  box-shadow: 0 8px 30px rgba(0,0,0,0.5);
   transform: translateX(4px);
 }
 
@@ -940,7 +943,7 @@ button { cursor: none; border: none; background: none; }
 }
 
 .timeline-year {
-  background: rgba(50, 205, 50, 0.12);
+  background: rgba(215, 25, 32, 0.12);
   color: var(--accent);
   border: 1px solid var(--border);
   border-radius: 50px;
@@ -1012,6 +1015,7 @@ button { cursor: none; border: none; background: none; }
   margin-bottom: 8px;
   font-size: 0.9rem;
   font-weight: 500;
+  color: var(--text-primary);
 }
 
 .skill-percent {
@@ -1023,6 +1027,7 @@ button { cursor: none; border: none; background: none; }
 .skill-bar-track {
   height: 8px;
   background: var(--bg-secondary);
+  border: 1px solid rgba(84, 6, 10, 0.4);
   border-radius: 4px;
   overflow: hidden;
 }
@@ -1030,7 +1035,7 @@ button { cursor: none; border: none; background: none; }
 .skill-bar-fill {
   height: 100%;
   width: 0; /* Animated by JS */
-  background: linear-gradient(90deg, var(--accent), var(--accent-2));
+  background: linear-gradient(90deg, var(--accent-primary), var(--accent));
   border-radius: 4px;
   transition: width 1.2s cubic-bezier(0.4, 0, 0.2, 1);
   position: relative;
@@ -1108,7 +1113,7 @@ button { cursor: none; border: none; background: none; }
 .project-card:hover {
   border-color: var(--border-hover);
   transform: translateY(-6px);
-  box-shadow: 0 20px 40px rgba(0,0,0,0.4);
+  box-shadow: 0 20px 40px rgba(0,0,0,0.6);
 }
 
 .project-card-top {
@@ -1119,7 +1124,7 @@ button { cursor: none; border: none; background: none; }
 
 .project-icon-wrap {
   width: 48px; height: 48px;
-  background: rgba(50, 205, 50, 0.12);
+  background: rgba(215, 25, 32, 0.12);
   border: 1px solid var(--border);
   border-radius: 12px;
   display: flex;
@@ -1137,6 +1142,7 @@ button { cursor: none; border: none; background: none; }
 .project-links a {
   width: 34px; height: 34px;
   border: 1px solid var(--border);
+  background: var(--bg-secondary);
   border-radius: 8px;
   display: flex;
   align-items: center;
@@ -1173,69 +1179,13 @@ button { cursor: none; border: none; background: none; }
 }
 
 .project-tags span {
-  background: rgba(50, 205, 50, 0.1);
+  background: rgba(215, 25, 32, 0.1);
   color: var(--accent);
   border: 1px solid var(--border);
   padding: 3px 12px;
   border-radius: 50px;
   font-size: 0.72rem;
   font-family: var(--font-mono);
-}
-
-/* =============================================
-   HOBBIES SECTION
-   ============================================= */
-.hobbies-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-  gap: 20px;
-}
-
-.hobby-card {
-  background: var(--bg-card);
-  border: 1px solid var(--border);
-  border-radius: var(--radius);
-  padding: 28px 20px;
-  text-align: center;
-  transition: var(--transition);
-}
-
-.hobby-card:hover {
-  border-color: var(--accent);
-  transform: translateY(-5px);
-  box-shadow: 0 12px 30px var(--accent-glow);
-}
-
-.hobby-icon {
-  width: 60px; height: 60px;
-  background: rgba(50, 205, 50, 0.1);
-  border: 1px solid var(--border);
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 1.4rem;
-  color: var(--accent);
-  margin: 0 auto 16px;
-  transition: var(--transition);
-}
-
-.hobby-card:hover .hobby-icon {
-  background: var(--accent);
-  color: #fff;
-  box-shadow: 0 0 20px var(--accent-glow);
-}
-
-.hobby-card h3 {
-  font-size: 1rem;
-  font-weight: 600;
-  margin-bottom: 8px;
-}
-
-.hobby-card p {
-  color: var(--text-secondary);
-  font-size: 0.85rem;
-  line-height: 1.6;
 }
 
 /* =============================================
@@ -1270,7 +1220,7 @@ button { cursor: none; border: none; background: none; }
 
 .contact-detail-icon {
   width: 44px; height: 44px;
-  background: rgba(50, 205, 50, 0.1);
+  background: rgba(215, 25, 32, 0.1);
   border: 1px solid var(--border);
   border-radius: 10px;
   display: flex;
@@ -1461,597 +1411,6 @@ button { cursor: none; border: none; background: none; }
 }
 
 /* =============================================
-   ACHIEVEMENTS & CERTIFICATIONS SECTION
-   ============================================= */
-.achievements-section {
-  background: var(--bg-secondary);
-  position: relative;
-  overflow: hidden;
-}
-
-/* Subtle background glow */
-.achievements-bg-glow {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  width: 700px;
-  height: 700px;
-  transform: translate(-50%, -50%);
-  background: radial-gradient(circle, rgba(50, 205, 50, 0.06) 0%, transparent 70%);
-  pointer-events: none;
-  z-index: 0;
-}
-
-.achievements-section .container {
-  position: relative;
-  z-index: 1;
-}
-
-/* Achievement Counters */
-.achievement-counters {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 16px;
-  flex-wrap: wrap;
-  margin-bottom: 44px;
-}
-
-.achievement-counter-pill {
-  display: inline-flex;
-  align-items: center;
-  gap: 10px;
-  background: rgba(50, 205, 50, 0.08);
-  border: 1px solid var(--border);
-  border-radius: 50px;
-  padding: 10px 22px;
-  font-family: var(--font-mono);
-  font-size: 0.9rem;
-  color: var(--accent);
-  font-weight: 600;
-  transition: var(--transition);
-}
-
-.achievement-counter-pill:hover {
-  border-color: var(--accent);
-  box-shadow: 0 0 16px var(--accent-glow);
-  transform: translateY(-2px);
-}
-
-.achievement-counter-pill i {
-  font-size: 1rem;
-  opacity: 0.8;
-}
-
-.achievement-counter-pill .counter-num {
-  font-weight: 700;
-  color: var(--text-primary);
-}
-
-.achievement-counter-separator {
-  color: var(--text-muted);
-  font-size: 0.75rem;
-  user-select: none;
-}
-
-/* Achievement Filters */
-.achievement-filters {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 12px;
-  margin-bottom: 52px;
-  flex-wrap: wrap;
-}
-
-.achievement-filters .filter-btn i {
-  font-size: 0.78rem;
-  margin-right: 4px;
-}
-
-/* Achievements Grid */
-.achievements-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
-  gap: 32px;
-  perspective: 1200px;
-}
-
-/* Achievement Card */
-.achievement-card {
-  background: var(--bg-card);
-  border: 1px solid var(--border);
-  border-radius: var(--radius-lg);
-  overflow: hidden;
-  display: flex;
-  flex-direction: column;
-  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1),
-              box-shadow 0.4s cubic-bezier(0.16, 1, 0.3, 1),
-              border-color 0.3s ease;
-  position: relative;
-  transform-style: preserve-3d;
-  will-change: transform, opacity;
-}
-
-/* Shimmer sweep on hover */
-.achievement-card::before {
-  content: '';
-  position: absolute;
-  top: -100%;
-  left: -100%;
-  width: 60%;
-  height: 200%;
-  background: linear-gradient(105deg, transparent 40%, rgba(50, 205, 50, 0.07) 50%, transparent 60%);
-  transform: skewX(-15deg);
-  transition: left 0.6s ease, top 0.6s ease;
-  pointer-events: none;
-  z-index: 2;
-}
-
-.achievement-card:hover::before {
-  top: -50%;
-  left: 140%;
-  transition: left 0.8s ease;
-}
-
-/* Gradient border glow on hover */
-.achievement-card::after {
-  content: '';
-  position: absolute;
-  inset: 0;
-  border-radius: var(--radius-lg);
-  background: linear-gradient(135deg, transparent 40%, rgba(50, 205, 50, 0.06) 60%, transparent 80%);
-  opacity: 0;
-  transition: opacity 0.4s;
-  pointer-events: none;
-  z-index: 1;
-}
-
-.achievement-card:hover::after {
-  opacity: 1;
-}
-
-.achievement-card:hover {
-  border-color: var(--border-hover);
-  transform: translateY(-8px) scale(1.02);
-  box-shadow:
-    0 24px 48px rgba(0, 0, 0, 0.35),
-    0 0 0 1px var(--border-hover),
-    0 0 40px var(--accent-glow);
-}
-
-/* Card Image Area */
-.achievement-card-image {
-  position: relative;
-  width: 100%;
-  height: 220px;
-  overflow: hidden;
-  background: var(--bg-secondary);
-}
-
-.achievement-card-image img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1);
-}
-
-.achievement-card:hover .achievement-card-image img {
-  transform: scale(1.08);
-}
-
-/* Category badge on image */
-.achievement-card-badge {
-  position: absolute;
-  top: 16px;
-  left: 16px;
-  background: rgba(10, 10, 15, 0.85);
-  backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px);
-  border: 1px solid var(--border);
-  border-radius: 50px;
-  padding: 6px 16px;
-  font-size: 0.78rem;
-  font-weight: 600;
-  color: var(--accent);
-  font-family: var(--font-mono);
-  display: flex;
-  align-items: center;
-  gap: 7px;
-  z-index: 3;
-  transition: var(--transition);
-}
-
-[data-theme="light"] .achievement-card-badge {
-  background: rgba(255, 255, 255, 0.9);
-}
-
-.achievement-card-badge i {
-  font-size: 0.76rem;
-}
-
-/* Card Body */
-.achievement-card-body {
-  padding: 28px;
-  display: flex;
-  flex-direction: column;
-  gap: 14px;
-  flex-grow: 1;
-  position: relative;
-  z-index: 2;
-}
-
-.achievement-card-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: flex-start;
-  gap: 12px;
-}
-
-.achievement-card-title {
-  font-size: 1.15rem;
-  font-weight: 600;
-  color: var(--text-primary);
-  line-height: 1.4;
-}
-
-.achievement-card-date {
-  background: rgba(50, 205, 50, 0.1);
-  color: var(--accent);
-  border: 1px solid var(--border);
-  border-radius: 50px;
-  padding: 4px 14px;
-  font-size: 0.78rem;
-  font-family: var(--font-mono);
-  white-space: nowrap;
-  flex-shrink: 0;
-}
-
-.achievement-card-org {
-  display: flex;
-  align-items: center;
-  gap: 9px;
-  font-size: 0.9rem;
-  color: var(--accent);
-  font-family: var(--font-mono);
-}
-
-.achievement-card-org i {
-  font-size: 0.75rem;
-  opacity: 0.7;
-}
-
-.achievement-card-desc {
-  color: var(--text-secondary);
-  font-size: 0.92rem;
-  line-height: 1.75;
-  flex-grow: 1;
-}
-
-.achievement-card-credential {
-  font-size: 0.8rem;
-  color: var(--text-muted);
-  font-family: var(--font-mono);
-}
-
-.achievement-card-credential strong {
-  color: var(--text-secondary);
-}
-
-/* Skills Tags */
-.achievement-card-skills {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 8px;
-  margin-top: 4px;
-}
-
-.achievement-card-skills span {
-  background: rgba(50, 205, 50, 0.1);
-  color: var(--accent);
-  border: 1px solid var(--border);
-  padding: 4px 14px;
-  border-radius: 50px;
-  font-size: 0.76rem;
-  font-family: var(--font-mono);
-  transition: var(--transition);
-}
-
-.achievement-card:hover .achievement-card-skills span {
-  border-color: var(--border-hover);
-}
-
-/* Card Footer Actions */
-.achievement-card-actions {
-  padding: 0 28px 24px;
-  position: relative;
-  z-index: 2;
-}
-
-.achievement-card-actions .btn {
-  width: 100%;
-  justify-content: center;
-  padding: 12px 22px;
-  font-size: 0.9rem;
-  gap: 9px;
-}
-
-.achievement-card-actions .btn i {
-  font-size: 0.8rem;
-  transition: transform 0.3s ease;
-}
-
-.achievement-card:hover .achievement-card-actions .btn i {
-  transform: translateX(3px);
-}
-
-/* Timeline connector (left accent line on card) */
-.achievement-card-body::before {
-  content: '';
-  position: absolute;
-  left: 0;
-  top: 12px;
-  bottom: 12px;
-  width: 3px;
-  background: linear-gradient(to bottom, var(--accent), var(--accent-2), transparent);
-  border-radius: 3px;
-  opacity: 0;
-  transition: opacity 0.4s;
-}
-
-.achievement-card:hover .achievement-card-body::before {
-  opacity: 1;
-}
-
-/* View All Button */
-.achievements-view-all-wrap {
-  text-align: center;
-  margin-top: 40px;
-}
-
-.achievements-view-all-btn {
-  padding: 14px 36px;
-  font-size: 0.95rem;
-}
-
-.achievements-view-all-btn i {
-  transition: transform 0.3s ease;
-}
-
-.achievements-view-all-btn:hover i {
-  transform: rotate(180deg);
-}
-
-/* ---- Certificate Placeholder SVG ---- */
-.achievement-placeholder-img {
-  width: 100%;
-  height: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background: linear-gradient(135deg, var(--bg-card) 0%, var(--bg-secondary) 100%);
-  position: relative;
-}
-
-.achievement-placeholder-img .placeholder-icon {
-  font-size: 3.5rem;
-  color: var(--accent);
-  opacity: 0.35;
-}
-
-.achievement-placeholder-img .placeholder-label {
-  position: absolute;
-  bottom: 10px;
-  left: 50%;
-  transform: translateX(-50%);
-  font-size: 0.65rem;
-  color: var(--text-muted);
-  font-family: var(--font-mono);
-  white-space: nowrap;
-  background: rgba(10, 10, 15, 0.5);
-  padding: 2px 10px;
-  border-radius: 4px;
-}
-
-[data-theme="light"] .achievement-placeholder-img .placeholder-label {
-  background: rgba(255, 255, 255, 0.7);
-}
-
-/* =============================================
-   CERTIFICATE PREVIEW MODAL
-   ============================================= */
-.cert-modal-overlay {
-  position: fixed;
-  inset: 0;
-  background: rgba(0, 0, 0, 0.85);
-  backdrop-filter: blur(16px);
-  -webkit-backdrop-filter: blur(16px);
-  z-index: 10000;
-  display: none;
-  align-items: center;
-  justify-content: center;
-  padding: 32px;
-  opacity: 0;
-  transition: opacity 0.35s ease;
-}
-
-.cert-modal-overlay.active {
-  display: flex;
-  opacity: 1;
-}
-
-.cert-modal {
-  background: var(--bg-card);
-  border: 1px solid var(--border);
-  border-radius: var(--radius-lg);
-  max-width: 900px;
-  width: 100%;
-  max-height: 90vh;
-  overflow: hidden;
-  position: relative;
-  display: flex;
-  flex-direction: column;
-  box-shadow: 0 32px 80px rgba(0, 0, 0, 0.6), 0 0 60px var(--accent-glow);
-  transform: scale(0.92) translateY(20px);
-  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1),
-              opacity 0.4s ease;
-}
-
-.cert-modal-overlay.active .cert-modal {
-  transform: scale(1) translateY(0);
-}
-
-.cert-modal-close {
-  position: absolute;
-  top: 16px;
-  right: 16px;
-  width: 40px;
-  height: 40px;
-  border-radius: 50%;
-  background: rgba(50, 205, 50, 0.1);
-  border: 1px solid var(--border);
-  color: var(--text-primary);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 1.1rem;
-  cursor: pointer;
-  transition: var(--transition);
-  z-index: 10;
-}
-
-.cert-modal-close:hover {
-  background: var(--accent);
-  color: #fff;
-  border-color: var(--accent);
-  transform: rotate(90deg) scale(1.1);
-}
-
-.cert-modal-body {
-  display: flex;
-  flex-direction: column;
-  overflow-y: auto;
-}
-
-.cert-modal-image-wrap {
-  background: var(--bg-secondary);
-  padding: 24px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  min-height: 300px;
-  overflow: hidden;
-  cursor: grab;
-}
-
-.cert-modal-image-wrap:active {
-  cursor: grabbing;
-}
-
-.cert-modal-image {
-  max-width: 100%;
-  max-height: 55vh;
-  object-fit: contain;
-  transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1);
-  transform-origin: center center;
-  border-radius: 8px;
-}
-
-.cert-modal-info {
-  padding: 28px;
-  border-top: 1px solid var(--border);
-}
-
-.cert-modal-info-title {
-  font-size: 1.2rem;
-  font-weight: 600;
-  color: var(--text-primary);
-  margin-bottom: 8px;
-}
-
-.cert-modal-info-org {
-  font-size: 0.88rem;
-  color: var(--accent);
-  font-family: var(--font-mono);
-  margin-bottom: 6px;
-}
-
-.cert-modal-info-date {
-  font-size: 0.82rem;
-  color: var(--text-muted);
-  font-family: var(--font-mono);
-  margin-bottom: 14px;
-}
-
-.cert-modal-info-desc {
-  font-size: 0.92rem;
-  color: var(--text-secondary);
-  line-height: 1.7;
-  margin-bottom: 16px;
-}
-
-.cert-modal-info-credential {
-  font-size: 0.78rem;
-  color: var(--text-muted);
-  font-family: var(--font-mono);
-}
-
-.cert-modal-info-credential strong {
-  color: var(--text-secondary);
-}
-
-.cert-modal-info-skills {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 6px;
-  margin-top: 14px;
-}
-
-.cert-modal-info-skills span {
-  background: rgba(50, 205, 50, 0.1);
-  color: var(--accent);
-  border: 1px solid var(--border);
-  padding: 3px 12px;
-  border-radius: 50px;
-  font-size: 0.72rem;
-  font-family: var(--font-mono);
-}
-
-/* Modal Zoom Controls */
-.cert-modal-controls {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 10px;
-  padding: 12px;
-  border-top: 1px solid var(--border);
-  background: var(--bg-card);
-}
-
-.cert-modal-zoom-btn {
-  width: 38px;
-  height: 38px;
-  border-radius: 10px;
-  background: rgba(50, 205, 50, 0.08);
-  border: 1px solid var(--border);
-  color: var(--text-secondary);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 0.9rem;
-  cursor: pointer;
-  transition: var(--transition);
-}
-
-.cert-modal-zoom-btn:hover {
-  background: var(--accent);
-  color: #fff;
-  border-color: var(--accent);
-  transform: translateY(-2px);
-  box-shadow: 0 4px 12px var(--accent-glow);
-}
-
-/* =============================================
    RESPONSIVE — TABLET (≤ 900px)
    ============================================= */
 @media (max-width: 900px) {
@@ -2083,12 +1442,6 @@ button { cursor: none; border: none; background: none; }
 
   /* Contact */
   .contact-grid { grid-template-columns: 1fr; gap: 40px; }
-
-  /* Achievements */
-  .achievements-grid { grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 26px; }
-  .achievement-card-image { height: 200px; }
-  .cert-modal { max-width: 95vw; }
-  .cert-modal-image { max-height: 40vh; }
 }
 
 /* =============================================
@@ -2217,12 +1570,6 @@ button { cursor: none; border: none; background: none; }
   .filter-btn { padding: 6px 14px; font-size: 0.82rem; }
   .projects-grid { grid-template-columns: 1fr; }
 
-  /* Hobbies */
-  .hobbies-grid { grid-template-columns: 1fr 1fr; gap: 14px; }
-  .hobby-card { padding: 20px 14px; }
-  .hobby-card h3 { font-size: 0.95rem; }
-  .hobby-card p { font-size: 0.82rem; }
-
   /* Footer */
   .footer-content { flex-direction: column; text-align: center; }
   .footer-links { justify-content: center; flex-wrap: wrap; gap: 12px; }
@@ -2230,22 +1577,6 @@ button { cursor: none; border: none; background: none; }
   /* Contact */
   .contact-detail { flex-direction: column; text-align: center; align-items: center; }
   .contact-socials { justify-content: center; }
-
-  /* Achievements */
-  .achievements-grid { grid-template-columns: 1fr; gap: 24px; }
-  .achievement-card-image { height: 200px; }
-  .achievement-card-body { padding: 22px; gap: 12px; }
-  .achievement-card-actions { padding: 0 22px 20px; }
-  .achievement-counters { gap: 10px; }
-  .achievement-counter-pill { padding: 8px 14px; font-size: 0.8rem; }
-  .achievement-counter-separator { display: none; }
-  .achievement-filters { gap: 8px; }
-  .achievement-filters .filter-btn { padding: 8px 16px; font-size: 0.85rem; }
-  .cert-modal-overlay { padding: 12px; }
-  .cert-modal-image-wrap { padding: 14px; min-height: 220px; }
-  .cert-modal-image { max-height: 35vh; }
-  .cert-modal-info { padding: 22px; }
-  .cert-modal-controls { padding: 10px; }
 
   /* Custom cursor hidden on touch */
   .cursor, .cursor-follower { display: none; }
@@ -2276,11 +1607,6 @@ button { cursor: none; border: none; background: none; }
   .about-stats { grid-template-columns: 1fr 1fr; gap: 8px; }
   .stat-card { padding: 14px 8px; }
   .stat-card h3 { font-size: 1.3rem; }
-
-  .hobbies-grid { grid-template-columns: 1fr; }
-
-  .achievement-counter-pill { padding: 6px 10px; font-size: 0.72rem; }
-  .achievement-filters .filter-btn { padding: 6px 12px; font-size: 0.78rem; }
 }
 
 /* =============================================
@@ -2298,7 +1624,7 @@ button { cursor: none; border: none; background: none; }
 .hero-orb-1 {
   width: 420px;
   height: 420px;
-  background: radial-gradient(circle, rgba(50, 205, 50, 0.18) 0%, transparent 70%);
+  background: radial-gradient(circle, rgba(215, 25, 32, 0.16) 0%, transparent 70%);
   top: 10%;
   left: -8%;
   animation: orbFloat 8s ease-in-out infinite;
@@ -2307,7 +1633,7 @@ button { cursor: none; border: none; background: none; }
 .hero-orb-2 {
   width: 300px;
   height: 300px;
-  background: radial-gradient(circle, rgba(0, 255, 255, 0.12) 0%, transparent 70%);
+  background: radial-gradient(circle, rgba(179, 13, 22, 0.14) 0%, transparent 70%);
   bottom: 5%;
   right: 5%;
   animation: orbFloat 10s ease-in-out infinite reverse;
@@ -2322,7 +1648,7 @@ button { cursor: none; border: none; background: none; }
 
 /* ---- Navbar Aurora Glow (scrolled) ---- */
 .navbar.scrolled {
-  box-shadow: 0 1px 40px rgba(50, 205, 50, 0.08);
+  box-shadow: 0 1px 40px rgba(84, 6, 10, 0.35);
 }
 
 .navbar.scrolled::after {
@@ -2341,7 +1667,7 @@ button { cursor: none; border: none; background: none; }
   position: relative;
 }
 .nav-logo:hover {
-  text-shadow: 0 0 20px rgba(50, 205, 50, 0.6);
+  text-shadow: 0 0 20px rgba(215, 25, 32, 0.7);
 }
 
 /* ---- Active nav link indicator dot ---- */
@@ -2349,8 +1675,7 @@ button { cursor: none; border: none; background: none; }
   color: var(--accent) !important;
 }
 
-/* ---- Hero role text gradient (applied via JS after typing completes) ---- */
-/* Note: shimmer applied to .hero-role via JS class .role-shimmer-active */
+/* ---- Hero role text gradient ---- */
 .role-shimmer-active {
   background: linear-gradient(120deg, var(--accent) 0%, var(--accent-2) 50%, var(--accent) 100%);
   background-size: 200% auto;
@@ -2364,16 +1689,15 @@ button { cursor: none; border: none; background: none; }
   to { background-position: 200% center; }
 }
 
-
 /* ---- Hero "Available" tag — extra shimmer ring ---- */
 .hero-tag {
-  box-shadow: 0 0 0 4px rgba(50, 205, 50, 0.06);
+  box-shadow: 0 0 0 4px rgba(215, 25, 32, 0.08);
   animation: fadeInDown 0.6s ease both, tagPulse 3s ease-in-out 1s infinite;
 }
 
 @keyframes tagPulse {
-  0%, 100% { box-shadow: 0 0 0 4px rgba(50, 205, 50, 0.06); }
-  50% { box-shadow: 0 0 0 8px rgba(50, 205, 50, 0.12); }
+  0%, 100% { box-shadow: 0 0 0 4px rgba(215, 25, 32, 0.08); }
+  50% { box-shadow: 0 0 0 8px rgba(215, 25, 32, 0.16); }
 }
 
 /* ---- Profile Avatar inner glow sweep ---- */
@@ -2382,7 +1706,7 @@ button { cursor: none; border: none; background: none; }
   position: absolute;
   inset: 0;
   border-radius: 50%;
-  background: conic-gradient(from 0deg, transparent 60%, rgba(50, 205, 50, 0.25) 80%, transparent 100%);
+  background: conic-gradient(from 0deg, transparent 60%, rgba(215, 25, 32, 0.3) 80%, transparent 100%);
   animation: rotate 5s linear infinite;
   z-index: 1;
 }
@@ -2401,11 +1725,11 @@ button { cursor: none; border: none; background: none; }
   display: block;
   width: 60px;
   height: 3px;
-  background: linear-gradient(90deg, var(--accent), var(--accent-2));
+  background: linear-gradient(90deg, var(--accent), var(--accent-primary));
   margin: 0 auto;
   border-radius: 2px;
   margin-top: -20px;
-  opacity: 0.4;
+  opacity: 0.5;
   filter: blur(2px);
 }
 
@@ -2430,7 +1754,7 @@ button { cursor: none; border: none; background: none; }
   left: -100%;
   width: 60%;
   height: 200%;
-  background: linear-gradient(105deg, transparent 40%, rgba(50, 205, 50, 0.07) 50%, transparent 60%);
+  background: linear-gradient(105deg, transparent 40%, rgba(215, 25, 32, 0.08) 50%, transparent 60%);
   transform: skewX(-15deg);
   transition: left 0.6s ease, top 0.6s ease;
   pointer-events: none;
@@ -2442,21 +1766,10 @@ button { cursor: none; border: none; background: none; }
   transition: left 0.8s ease;
 }
 
-/* ---- Hobby card icon rotation on hover ---- */
-.hobby-card:hover .hobby-icon i {
-  animation: iconSpin 0.5s ease;
-}
-
-@keyframes iconSpin {
-  0% { transform: rotate(0deg) scale(1); }
-  50% { transform: rotate(20deg) scale(1.2); }
-  100% { transform: rotate(0deg) scale(1); }
-}
-
 /* ---- Tech icon card glow on hover ---- */
 .tech-icon-card:hover {
-  background: rgba(50, 205, 50, 0.06);
-  box-shadow: 0 0 20px rgba(50, 205, 50, 0.2), 0 12px 25px var(--accent-glow);
+  background: rgba(215, 25, 32, 0.08);
+  box-shadow: 0 0 20px rgba(84, 6, 10, 0.5), 0 12px 25px var(--accent-glow);
 }
 
 /* ---- Timeline card left accent bar ---- */
@@ -2471,7 +1784,7 @@ button { cursor: none; border: none; background: none; }
   position: absolute;
   left: 0; top: 0; bottom: 0;
   width: 3px;
-  background: linear-gradient(to bottom, var(--accent), var(--accent-2), transparent);
+  background: linear-gradient(to bottom, var(--accent), var(--accent-primary), transparent);
   border-radius: 3px 0 0 3px;
   opacity: 0;
   transition: opacity 0.3s;
@@ -2489,7 +1802,7 @@ button { cursor: none; border: none; background: none; }
   content: '';
   position: absolute;
   inset: -2px;
-  background: linear-gradient(135deg, var(--accent), var(--accent-2), var(--accent));
+  background: linear-gradient(135deg, var(--accent), var(--accent-primary), var(--accent));
   border-radius: calc(var(--radius-lg) + 2px);
   opacity: 0;
   z-index: -1;
@@ -2498,7 +1811,7 @@ button { cursor: none; border: none; background: none; }
   animation: gradientShift 4s ease infinite;
 }
 
-.contact-form-wrapper:hover::before { opacity: 0.3; }
+.contact-form-wrapper:hover::before { opacity: 0.35; }
 
 @keyframes gradientShift {
   0%, 100% { background-position: 0% 50%; }
@@ -2540,7 +1853,7 @@ button { cursor: none; border: none; background: none; }
   top: 0; left: 50%;
   transform: translateX(-50%);
   width: 600px; height: 2px;
-  background: linear-gradient(90deg, transparent, var(--accent), var(--accent-2), var(--accent), transparent);
+  background: linear-gradient(90deg, transparent, var(--accent), var(--accent-primary), transparent);
   opacity: 0.6;
 }
 
@@ -2556,7 +1869,7 @@ button { cursor: none; border: none; background: none; }
 }
 
 .footer-heart {
-  color: #ff6b6b;
+  color: #ff4757;
   animation: heartbeat 1.4s ease-in-out infinite;
   display: inline-block;
 }
@@ -2580,14 +1893,14 @@ button { cursor: none; border: none; background: none; }
 .stat-card.reveal:nth-child(3) { transition-delay: 0.25s; }
 .stat-card.reveal:nth-child(4) { transition-delay: 0.35s; }
 
-/* ---- Back to top — shimmer border ---- */
+/* ---- Back to top ---- */
 .back-to-top {
-  background: linear-gradient(135deg, var(--accent), #28a428);
-  border: 1px solid rgba(50, 205, 50, 0.4);
+  background: linear-gradient(135deg, var(--accent), var(--accent-primary));
+  border: 1px solid rgba(215, 25, 32, 0.4);
 }
 
 .back-to-top:hover {
-  background: linear-gradient(135deg, #28a428, var(--accent));
+  background: linear-gradient(135deg, var(--accent-primary), var(--accent));
 }
 
 /* ---- Section headers — animated underline ---- */
@@ -2604,62 +1917,16 @@ button { cursor: none; border: none; background: none; }
 .social-links .social-icon:nth-child(1) { animation-delay: 0.4s; }
 .social-links .social-icon:nth-child(2) { animation-delay: 0.55s; }
 .social-links .social-icon:nth-child(3) { animation-delay: 0.7s; }
-.social-links .social-icon:nth-child(4) { animation-delay: 0.85s; }
 
 /* ---- Skill bar gradient glow ---- */
 .skill-bar-fill {
-  box-shadow: 0 0 8px rgba(50, 205, 50, 0.4);
+  box-shadow: 0 0 10px rgba(215, 25, 32, 0.45);
 }
 
 /* ---- Scrollbar thumb — gradient ---- */
 ::-webkit-scrollbar-thumb {
-  background: linear-gradient(to bottom, var(--accent), var(--accent-2));
+  background: linear-gradient(to bottom, var(--accent), var(--accent-primary));
 }
-
-
-/* =============================================
-   🌗 LIGHT THEME VARIABLES
-   ============================================= */
-[data-theme="light"] {
-  --bg-primary:      #f4f6fb;
-  --bg-secondary:    #eaecf5;
-  --bg-card:         #ffffff;
-  --bg-card-hover:   #f0f2fa;
-  --accent:          #1a8a1a;
-  --accent-glow:     rgba(26, 138, 26, 0.25);
-  --accent-2:        #0099aa;
-  --text-primary:    #111122;
-  --text-secondary:  #44445a;
-  --text-muted:      #888899;
-  --border:          rgba(26, 138, 26, 0.18);
-  --border-hover:    rgba(26, 138, 26, 0.5);
-}
-
-/* Smooth theme transition on html */
-html.theme-transitioning,
-html.theme-transitioning *,
-html.theme-transitioning *::before,
-html.theme-transitioning *::after {
-  transition:
-    background-color 0.45s cubic-bezier(0.4, 0, 0.2, 1),
-    color 0.45s cubic-bezier(0.4, 0, 0.2, 1),
-    border-color 0.45s cubic-bezier(0.4, 0, 0.2, 1),
-    box-shadow 0.45s cubic-bezier(0.4, 0, 0.2, 1) !important;
-}
-
-/* Light mode hero grid */
-[data-theme="light"] .hero-grid {
-  opacity: 0.5;
-}
-
-/* Light mode hero orbs */
-[data-theme="light"] .hero-orb-1 {
-  background: radial-gradient(circle, rgba(26, 138, 26, 0.12) 0%, transparent 70%);
-}
-[data-theme="light"] .hero-orb-2 {
-  background: radial-gradient(circle, rgba(0, 153, 170, 0.09) 0%, transparent 70%);
-}
-
 
 /* =============================================
    📊 SCROLL PROGRESS BAR
@@ -2669,7 +1936,7 @@ html.theme-transitioning *::after {
   top: 0; left: 0;
   height: 3px;
   width: 0%;
-  background: linear-gradient(90deg, var(--accent), var(--accent-2), var(--accent));
+  background: linear-gradient(90deg, var(--accent), var(--accent-primary), var(--accent));
   background-size: 200% auto;
   animation: progressShimmer 2s linear infinite;
   z-index: 9999;
@@ -2681,7 +1948,6 @@ html.theme-transitioning *::after {
   to { background-position: 200% center; }
 }
 
-
 /* =============================================
    🌗 THEME TOGGLE BUTTON
    ============================================= */
@@ -2689,7 +1955,7 @@ html.theme-transitioning *::after {
   width: 42px;
   height: 42px;
   border-radius: 50%;
-  background: rgba(50, 205, 50, 0.08);
+  background: rgba(215, 25, 32, 0.08);
   border: 1.5px solid var(--border);
   display: flex;
   align-items: center;
@@ -2733,7 +1999,6 @@ html.theme-transitioning *::after {
   color: #fff;
 }
 
-
 /* =============================================
    🎯 NAV ACTIVE PILL INDICATOR
    ============================================= */
@@ -2746,13 +2011,12 @@ html.theme-transitioning *::after {
   bottom: -4px;
   left: 0;
   height: 2px;
-  background: linear-gradient(90deg, var(--accent), var(--accent-2));
+  background: linear-gradient(90deg, var(--accent), var(--accent-primary));
   border-radius: 1px;
   transition: left 0.35s cubic-bezier(0.4, 0, 0.2, 1),
               width 0.35s cubic-bezier(0.4, 0, 0.2, 1);
   pointer-events: none;
 }
-
 
 /* =============================================
    🖱️ CURSOR — HOVER STATES
@@ -2785,7 +2049,6 @@ html.theme-transitioning *::after {
   50%       { opacity: 0; }
 }
 
-
 /* =============================================
    🎆 PARTICLE CANVAS
    ============================================= */
@@ -2805,7 +2068,6 @@ html.theme-transitioning *::after {
 .hero-grid, .hero-orb, .scroll-indicator {
   z-index: 1;
 }
-
 
 /* =============================================
    🎞️ ADVANCED SCROLL REVEAL ANIMATIONS
@@ -2827,7 +2089,7 @@ html.theme-transitioning *::after {
   transform: translateY(0);
 }
 
-/* Fade Left (enter from left) */
+/* Fade Left */
 .reveal-fade-left {
   transform: translateX(-36px);
 }
@@ -2836,7 +2098,7 @@ html.theme-transitioning *::after {
   transform: translateX(0);
 }
 
-/* Fade Right (enter from right) */
+/* Fade Right */
 .reveal-fade-right {
   transform: translateX(36px);
 }
@@ -2860,11 +2122,9 @@ html.theme-transitioning *::after {
   transform: none;
 }
 
-
 /* =============================================
    ⏱️ TIMELINE — ANIMATED LINE
    ============================================= */
-/* Hide the CSS ::before line when we inject the JS-animated one */
 .timeline-line-animated ~ .timeline::before {
   display: none;
 }
@@ -2875,7 +2135,7 @@ html.theme-transitioning *::after {
   top: 0;
   width: 2px;
   height: 0;
-  background: linear-gradient(to bottom, var(--accent), var(--accent-2), transparent);
+  background: linear-gradient(to bottom, var(--accent), var(--accent-primary), transparent);
   border-radius: 1px;
   transition: height 1.8s cubic-bezier(0.16, 1, 0.3, 1);
   z-index: 0;
@@ -2884,7 +2144,6 @@ html.theme-transitioning *::after {
 .timeline-line-animated.animate {
   height: 100%;
 }
-
 
 /* =============================================
    🃏 PROJECT CARDS — 3D LIFT
@@ -2897,18 +2156,17 @@ html.theme-transitioning *::after {
 .project-card:hover {
   transform: translateY(-8px) rotate3d(1, 0.5, 0, 3deg);
   box-shadow:
-    0 24px 48px rgba(0, 0, 0, 0.45),
+    0 24px 48px rgba(0, 0, 0, 0.65),
     0 0 0 1px var(--border-hover),
-    0 0 40px var(--accent-glow);
+    0 0 35px var(--accent-glow);
 }
 
-/* Project card gradient border reveal */
 .project-card::after {
   content: '';
   position: absolute;
   inset: 0;
   border-radius: var(--radius-lg);
-  background: linear-gradient(135deg, transparent 40%, rgba(50, 205, 50, 0.06) 60%, transparent 80%);
+  background: linear-gradient(135deg, transparent 40%, rgba(215, 25, 32, 0.06) 60%, transparent 80%);
   opacity: 0;
   transition: opacity 0.4s;
   pointer-events: none;
@@ -2917,7 +2175,6 @@ html.theme-transitioning *::after {
 .project-card:hover::after {
   opacity: 1;
 }
-
 
 /* =============================================
    📊 SKILL BARS — GLOW PULSE EDGE
@@ -2938,7 +2195,6 @@ html.theme-transitioning *::after {
   50%       { opacity: 1; box-shadow: 0 0 8px rgba(255, 255, 255, 0.6); }
 }
 
-
 /* =============================================
    🏷️ SECTION HEADER UNDERLINE ANIMATION
    ============================================= */
@@ -2950,7 +2206,6 @@ html.theme-transitioning *::after {
   transition: width 0.9s cubic-bezier(0.16, 1, 0.3, 1) 0.3s;
 }
 
-
 /* =============================================
    🌟 HERO BUTTONS — MAGNETIC RESET SAFETY
    ============================================= */
@@ -2958,7 +2213,6 @@ html.theme-transitioning *::after {
   transition: var(--transition), transform 0.25s cubic-bezier(0.34, 1.56, 0.64, 1);
   will-change: transform;
 }
-
 
 /* =============================================
    📱 THEME TOGGLE MOBILE — SHOW BESIDE HAMBURGER
@@ -2972,7 +2226,6 @@ html.theme-transitioning *::after {
     gap: 8px;
   }
 }
-
 
 /* =============================================
    ♿ REDUCED MOTION — SAFE FALLBACKS
@@ -3006,71 +2259,13 @@ html.theme-transitioning *::after {
   .type-caret { animation: none; }
 }
 
-
-/* =============================================
-   💅 LIGHT THEME — ADDITIONAL OVERRIDES
-   ============================================= */
-[data-theme="light"] body {
-  background: var(--bg-primary);
-}
-
-[data-theme="light"] .navbar.scrolled {
-  background: rgba(244, 246, 251, 0.92);
-}
-
-[data-theme="light"] .nav-links {
-  background: var(--bg-card);
-}
-
-[data-theme="light"] .hero::before {
-  background: radial-gradient(circle, rgba(26, 138, 26, 0.08) 0%, transparent 70%);
-}
-
-[data-theme="light"] .project-card:hover {
-  box-shadow:
-    0 20px 40px rgba(0, 0, 0, 0.12),
-    0 0 0 1px var(--border-hover),
-    0 0 30px var(--accent-glow);
-}
-
-[data-theme="light"] .achievement-card:hover {
-  box-shadow:
-    0 20px 40px rgba(0, 0, 0, 0.12),
-    0 0 0 1px var(--border-hover),
-    0 0 30px var(--accent-glow);
-}
-
-[data-theme="light"] .achievements-bg-glow {
-  background: radial-gradient(circle, rgba(26, 138, 26, 0.05) 0%, transparent 70%);
-}
-
-[data-theme="light"] .cert-modal-overlay {
-  background: rgba(255, 255, 255, 0.85);
-}
-
-[data-theme="light"] .cert-modal {
-  box-shadow: 0 32px 80px rgba(0, 0, 0, 0.15), 0 0 40px var(--accent-glow);
-}
-
-[data-theme="light"] .timeline-card:hover {
-  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1);
-}
-
-[data-theme="light"] .back-to-top {
-  box-shadow: 0 4px 15px var(--accent-glow);
-}
-
-
 /* =============================================
    GSAP ANIMATION SUPPORT STYLES
    ============================================= */
-
-/* ── Allow clip-path on titles ── */
 .section-title {
   overflow: visible;
 }
 
-/* ── Animated underline (.hl-line injected by JS) ── */
 .highlight {
   position: relative;
   display: inline-block;
@@ -3083,13 +2278,11 @@ html.theme-transitioning *::after {
   left: 0;
   width: 100%;
   height: 3px;
-  background: linear-gradient(90deg, var(--accent), var(--accent-2));
+  background: linear-gradient(90deg, var(--accent), var(--accent-primary));
   border-radius: 2px;
   transform-origin: left center;
-  /* scaleX animated by GSAP */
 }
 
-/* ── Back-to-top ring pulse ── */
 .btt-ring {
   position: absolute;
   inset: -4px;
@@ -3105,7 +2298,6 @@ html.theme-transitioning *::after {
   100% { transform: scale(1.55); opacity: 0;  }
 }
 
-/* ── 3D perspective containers for card tilt ── */
 .projects-grid {
   perspective: 1200px;
 }
@@ -3114,12 +2306,10 @@ html.theme-transitioning *::after {
   transform-style: preserve-3d;
 }
 
-/* ── Clip-path reveal base state (GSAP sets these dynamically) ── */
 .section-header .section-title {
   will-change: transform, opacity, clip-path;
 }
 
-/* ── Social icon float (GSAP overrides y position; keep layout stable) ── */
 .social-links {
   position: relative;
 }
@@ -3129,13 +2319,11 @@ html.theme-transitioning *::after {
   will-change: transform;
 }
 
-/* ── Button ripple container ── */
 .btn {
   position: relative;
   overflow: hidden;
 }
 
-/* ── Smooth will-change hints for GSAP targets ── */
 .hero-tag,
 .hero-title,
 .hero-description,
@@ -3145,18 +2333,15 @@ html.theme-transitioning *::after {
 .timeline-card,
 .skills-group,
 .project-card,
-.hobby-card,
 .contact-info,
 .contact-form-wrapper {
   will-change: transform, opacity;
 }
 
-/* ── Section parallax layer ── */
 .hero-grid {
   will-change: transform;
 }
 
-/* ── Tech card hover 3D ── */
 .tech-icons {
   perspective: 800px;
 }
@@ -3166,28 +2351,19 @@ html.theme-transitioning *::after {
   will-change: transform;
 }
 
-/* ── Hobby card hover ── */
-.hobbies-grid {
-  perspective: 1000px;
-}
-
-/* ── Stat card spring origin ── */
 .stat-card {
   transform-origin: center bottom;
 }
 
-/* ── GSAP: prevent flash of invisible content before animations run ── */
 .hero-tag,
 .hero-title,
 .hero-description,
 .hero-buttons,
 .social-links,
 .hero-image-wrapper {
-  /* GSAP sets opacity:0 at start; ensure no flash on slow devices */
   animation-fill-mode: both;
 }
 
-/* ── Mobile: disable 3D tilt (too expensive on touch devices) ── */
 @media (hover: none) and (pointer: coarse) {
   .project-card,
   .tech-icon-card {
@@ -3195,13 +2371,11 @@ html.theme-transitioning *::after {
   }
 }
 
-/* ── Section tag text expand animation ── */
 .section-tag {
   will-change: opacity, letter-spacing;
   overflow: hidden;
 }
 
-/* ── Footer heart pulse ── */
 .footer-heart {
   display: inline-block;
   animation: heartBeat 1.4s ease-in-out infinite;
@@ -3215,12 +2389,10 @@ html.theme-transitioning *::after {
   70%       { transform: scale(1);   }
 }
 
-/* ── Scroll-triggered parallax: prevent layout shift ── */
 .hero-image-frame {
   will-change: transform;
 }
 
-/* ── Reduced motion: override GSAP inline styles ── */
 @media (prefers-reduced-motion: reduce) {
   .hl-line      { transform: scaleX(1) !important; }
   .btt-ring     { animation: none !important; }
@@ -3237,7 +2409,6 @@ html.theme-transitioning *::after {
   .timeline-card,
   .skills-group,
   .project-card,
-  .hobby-card,
   .contact-info,
   .contact-form-wrapper,
   .section-title,
@@ -3246,11 +2417,7 @@ html.theme-transitioning *::after {
   .footer-bottom,
   .skill-bar-item,
   .tech-icon-card,
-  .hobby-card,
-  .contact-detail,
-  .achievement-card,
-  .achievement-counter-pill,
-  .cert-modal {
+  .contact-detail {
     opacity: 1 !important;
     transform: none !important;
     filter: none !important;

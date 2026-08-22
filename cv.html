@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Avinash Verma – CV / Resume</title>
-  <meta name="description" content="Professional portfolio and CV of Avinash Verma, C++ & AI Web Developer." />
+  <title>Aditya Soni – CV / Resume</title>
+  <meta name="description" content="Professional CV and Resume of Aditya Soni, B.Tech CSE (AI & ML) Student, Developer & AI Enthusiast." />
   <link rel="stylesheet" href="index.css" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
   <!-- Anime.js Engine & GSAP + ScrollTrigger -->
@@ -12,29 +12,28 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" defer></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js" defer></script>
 
-
   <style>
     :root {
-      --bg-primary: #0a0a0f;
-      --bg-secondary: #0f0f1a;
-      --bg-card: #13131f;
-      --bg-card2: #1c1c30;
-      --border: rgba(50, 205, 50, 0.15);
-      --border-light: rgba(50, 205, 50, 0.3);
-      --text-primary: #e8e8f0;
-      --text-secondary: #8888aa;
-      --text-muted: #55556a;
+      --bg-primary: #090606;
+      --bg-secondary: #110e0f;
+      --bg-card: #181617;
+      --bg-card2: #221d1f;
+      --border: #54060A;
+      --border-light: rgba(215, 25, 32, 0.45);
+      --text-primary: #F3F4F4;
+      --text-secondary: #B7B5B5;
+      --text-muted: #7c7778;
       --radius-lg: 20px;
       --radius-md: 12px;
       --radius-sm: 8px;
       --transition: 0.3s cubic-bezier(0.4, 0, 0.2, 1);
       
-      --accent-purple: #32cd32; /* Lime green */
-      --accent-pink: #00ffff;   /* Cyan */
-      --accent-blue: #00ffff;   /* Cyan */
-      --gradient-main: linear-gradient(135deg, #32cd32, #00ffff);
-      --gradient-bg: radial-gradient(circle at top right, rgba(50, 205, 50, 0.05), transparent 40%);
-      --shadow-card: 0 10px 30px rgba(0, 0, 0, 0.5);
+      --accent-purple: #D71920; /* Bright Red */
+      --accent-pink: #ff414d;   /* Vivid Red Accent */
+      --accent-blue: #B30D16;   /* Primary Red */
+      --gradient-main: linear-gradient(135deg, #D71920, #B30D16);
+      --gradient-bg: radial-gradient(circle at top right, rgba(215, 25, 32, 0.08), transparent 40%);
+      --shadow-card: 0 10px 30px rgba(0, 0, 0, 0.6);
     }
 
     body {
@@ -51,7 +50,7 @@
       max-width: 1100px;
       margin: 40px auto;
       width: 95%;
-      background: rgba(22, 22, 31, 0.85);
+      background: rgba(24, 22, 23, 0.92);
       border: 1px solid var(--border);
       border-radius: var(--radius-lg);
       backdrop-filter: blur(20px);
@@ -115,26 +114,16 @@
     .btn-pdf {
       background: var(--gradient-main);
       color: white;
-      box-shadow: 0 4px 15px rgba(50, 205, 50, 0.3);
+      box-shadow: 0 4px 15px rgba(215, 25, 32, 0.35);
     }
     .btn-pdf:hover {
       transform: translateY(-2px);
-      box-shadow: 0 6px 20px rgba(50, 205, 50, 0.45);
-    }
-    .btn-img {
-      background: rgba(124, 58, 237, 0.15);
-      border: 1px solid rgba(124, 58, 237, 0.3);
-      color: #a78bfa;
-    }
-    .btn-img:hover {
-      background: rgba(124, 58, 237, 0.25);
-      color: white;
-      transform: translateY(-2px);
+      box-shadow: 0 6px 20px rgba(215, 25, 32, 0.55);
     }
 
     /* LEFT SIDEBAR (Dark Theme) */
     .cv-sidebar {
-      background: #070913;
+      background: #0d0a0b;
       border-right: 1px solid var(--border);
       padding: 40px 30px;
       display: flex;
@@ -161,7 +150,7 @@
       position: absolute;
       inset: -5px;
       border-radius: 50%;
-      background: linear-gradient(135deg, #32cd32, #00ffff);
+      background: var(--gradient-main);
       padding: 3px;
       animation: rotateRing 10s linear infinite;
     }
@@ -175,7 +164,7 @@
       height: 100%;
       border-radius: 50%;
       object-fit: cover;
-      border: 4px solid #070913;
+      border: 4px solid #0d0a0b;
       position: relative;
       z-index: 2;
     }
@@ -194,7 +183,7 @@
       gap: 10px;
     }
     .cv-section-title i {
-      color: var(--accent-pink);
+      color: var(--accent-purple);
     }
 
     /* Contact Details */
@@ -213,12 +202,12 @@
       width: 32px;
       height: 32px;
       border-radius: 50%;
-      background: rgba(124, 58, 237, 0.15);
-      border: 1px solid rgba(124, 58, 237, 0.25);
+      background: rgba(215, 25, 32, 0.12);
+      border: 1px solid var(--border);
       display: flex;
       align-items: center;
       justify-content: center;
-      color: #a78bfa;
+      color: var(--accent-purple);
       font-size: 13px;
       flex-shrink: 0;
     }
@@ -234,7 +223,7 @@
       transition: var(--transition);
     }
     .contact-info a:hover {
-      color: var(--accent-pink);
+      color: var(--accent-purple);
     }
 
     /* Education Roadmap */
@@ -267,7 +256,7 @@
       height: 8px;
       border-radius: 50%;
       background: var(--accent-purple);
-      border: 2px solid #070913;
+      border: 2px solid #0d0a0b;
       box-shadow: 0 0 10px var(--accent-purple);
       transition: var(--transition);
     }
@@ -289,7 +278,7 @@
     .edu-year {
       font-size: 11px;
       font-weight: 600;
-      color: var(--accent-pink);
+      color: var(--accent-purple);
       margin-top: 4px;
     }
 
@@ -313,9 +302,10 @@
     }
     .skill-track {
       height: 6px;
-      background: var(--bg-input);
+      background: rgba(255, 255, 255, 0.06);
       border-radius: 3px;
       overflow: hidden;
+      border: 1px solid rgba(84, 6, 10, 0.4);
     }
     .skill-fill {
       height: 100%;
@@ -329,8 +319,8 @@
     .sidebar-quote {
       margin-top: auto;
       padding: 16px;
-      background: rgba(224, 64, 251, 0.05);
-      border-left: 3px solid var(--accent-pink);
+      background: rgba(215, 25, 32, 0.08);
+      border-left: 3px solid var(--accent-purple);
       border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
       font-size: 12px;
       line-height: 1.5;
@@ -338,7 +328,7 @@
       color: var(--text-secondary);
     }
     .sidebar-quote i {
-      color: var(--accent-pink);
+      color: var(--accent-purple);
       font-size: 16px;
       display: block;
       margin-bottom: 6px;
@@ -350,7 +340,7 @@
       display: flex;
       flex-direction: column;
       gap: 36px;
-      background: rgba(255, 255, 255, 0.02);
+      background: rgba(255, 255, 255, 0.01);
     }
 
     .header-info h1 {
@@ -359,6 +349,7 @@
       letter-spacing: -1px;
       line-height: 1.1;
       margin-bottom: 8px;
+      color: var(--text-primary);
     }
     .header-info h1 span {
       background: var(--gradient-main);
@@ -371,7 +362,7 @@
       font-weight: 700;
       letter-spacing: 2px;
       text-transform: uppercase;
-      color: var(--accent-blue);
+      color: var(--accent-purple);
       margin-bottom: 20px;
     }
     .header-info p {
@@ -399,7 +390,7 @@
     .metric-card:hover {
       border-color: var(--border-light);
       transform: translateY(-3px);
-      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.4);
     }
     .metric-icon {
       font-size: 18px;
@@ -407,7 +398,6 @@
       margin-bottom: 8px;
     }
     .metric-val {
-      font-family: 'Outfit', sans-serif;
       font-size: 22px;
       font-weight: 800;
       color: var(--text-primary);
@@ -434,7 +424,7 @@
       color: var(--accent-purple);
     }
 
-    /* Experience Bullets */
+    /* Highlight Card */
     .exp-card {
       background: var(--bg-card);
       border: 1px solid var(--border);
@@ -457,14 +447,14 @@
     .exp-company {
       font-size: 13px;
       font-weight: 600;
-      color: var(--accent-pink);
+      color: var(--accent-purple);
       margin-top: 4px;
     }
     .exp-duration {
       font-size: 12px;
-      background: rgba(59, 130, 246, 0.1);
-      border: 1px solid rgba(59, 130, 246, 0.25);
-      color: #60a5fa;
+      background: rgba(215, 25, 32, 0.12);
+      border: 1px solid var(--border);
+      color: var(--accent-pink);
       padding: 4px 10px;
       border-radius: 20px;
       font-weight: 600;
@@ -498,9 +488,9 @@
       gap: 12px;
     }
     .project-card:hover {
-      border-color: var(--accent-pink);
+      border-color: var(--border-light);
       transform: translateY(-4px);
-      box-shadow: 0 10px 24px rgba(50, 205, 50, 0.12);
+      box-shadow: 0 10px 24px rgba(215, 25, 32, 0.2);
     }
     .proj-top {
       display: flex;
@@ -510,13 +500,13 @@
     .proj-icon {
       width: 38px;
       height: 38px;
-      background: rgba(124, 58, 237, 0.1);
-      border: 1px solid rgba(124, 58, 237, 0.2);
+      background: rgba(215, 25, 32, 0.12);
+      border: 1px solid var(--border);
       border-radius: 8px;
       display: flex;
       align-items: center;
       justify-content: center;
-      color: #a78bfa;
+      color: var(--accent-purple);
       font-size: 16px;
     }
     .proj-name {
@@ -530,36 +520,10 @@
       line-height: 1.5;
     }
 
-    /* Hobbies List */
-    .hobbies-flex {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 12px;
-    }
-    .hobby-item {
-      background: var(--bg-card2);
-      border: 1px solid var(--border);
-      border-radius: 30px;
-      padding: 8px 18px;
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      font-size: 12px;
-      font-weight: 600;
-      color: var(--text-secondary);
-      transition: var(--transition);
-      cursor: default;
-    }
-    .hobby-item:hover {
-      border-color: var(--border-light);
-      color: var(--text-primary);
-      background: rgba(255, 255, 255, 0.05);
-    }
-
     /* Bottom Work Together Banner */
     .work-banner {
-      background: linear-gradient(135deg, rgba(50, 205, 50, 0.08) 0%, rgba(0, 255, 255, 0.08) 100%);
-      border: 1px solid rgba(50, 205, 50, 0.2);
+      background: linear-gradient(135deg, rgba(215, 25, 32, 0.1) 0%, rgba(179, 13, 22, 0.12) 100%);
+      border: 1px solid var(--border);
       border-radius: var(--radius-lg);
       padding: 30px;
       display: flex;
@@ -589,12 +553,12 @@
       align-items: center;
       gap: 8px;
       text-decoration: none;
-      box-shadow: 0 4px 15px rgba(50, 205, 50, 0.3);
+      box-shadow: 0 4px 15px rgba(215, 25, 32, 0.35);
       transition: var(--transition);
     }
     .btn-mail:hover {
       transform: translateY(-2px);
-      box-shadow: 0 6px 20px rgba(50, 205, 50, 0.45);
+      box-shadow: 0 6px 20px rgba(215, 25, 32, 0.55);
     }
 
     .proj-links {
@@ -603,7 +567,7 @@
       gap: 12px;
     }
     .proj-link {
-      color: var(--accent-pink);
+      color: var(--accent-purple);
       text-decoration: none;
       font-size: 12px;
       font-weight: 700;
@@ -613,7 +577,7 @@
       transition: var(--transition);
     }
     .proj-link:hover {
-      color: var(--accent-purple);
+      color: var(--accent-pink);
     }
 
     /* Responsive */
@@ -648,14 +612,6 @@
       .actions-right {
         justify-content: space-between;
       }
-      .work-banner {
-        flex-direction: column;
-        align-items: stretch;
-        text-align: center;
-      }
-      .btn-mail {
-        justify-content: center;
-      }
     }
   </style>
 </head>
@@ -670,7 +626,7 @@
     <div class="nav-container">
       <!-- Logo -->
       <a href="index.html" class="nav-logo">
-        <span class="logo-bracket">&lt;</span>AV<span class="logo-bracket">/&gt;</span>
+        <span class="logo-bracket">&lt;</span><span class="logo-text">AS</span><span class="logo-bracket">/&gt;</span>
       </a>
 
       <!-- Nav Links -->
@@ -680,7 +636,6 @@
         <li><a href="index.html#education" class="nav-link">Education</a></li>
         <li><a href="index.html#skills" class="nav-link">Skills</a></li>
         <li><a href="index.html#projects" class="nav-link">Projects</a></li>
-        <li><a href="index.html#hobbies" class="nav-link">Hobbies</a></li>
         <li><a href="index.html#contact" class="nav-link">Contact</a></li>
       </ul>
 
@@ -704,8 +659,8 @@
   <!-- ACTIONS BAR -->
   <div class="actions-bar anim-fade-up">
     <div class="actions-left">
-      <a href="index.html" class="btn-secondary" style="padding: 8px 16px; font-size: 13px; border-radius: 30px; text-decoration: none;">
-        <i class="fas fa-arrow-left"></i> Home
+      <a href="index.html" class="btn-secondary" style="padding: 8px 16px; font-size: 13px; border-radius: 30px; text-decoration: none; border: 1px solid var(--border); background: var(--bg-card); color: var(--text-primary); display: inline-flex; align-items: center; gap: 6px;">
+        <i class="fas fa-arrow-left"></i> Back to Portfolio
       </a>
     </div>
     <div class="actions-right">
@@ -724,7 +679,7 @@
       <div class="profile-section">
         <div class="avatar-container">
           <div class="avatar-ring"></div>
-          <img src="IMG_20250921_0254421.jpg" alt="Avinash Verma" class="avatar-pic" />
+          <img src="IMG_20250921_0254421.jpg.jpeg" alt="Aditya Soni" class="avatar-pic" />
         </div>
       </div>
 
@@ -733,45 +688,27 @@
         <h3 class="cv-section-title"><i class="fas fa-address-book"></i> Contact</h3>
         <ul class="contact-list">
           <li class="contact-item">
-            <div class="contact-icon"><i class="fas fa-phone"></i></div>
-            <div class="contact-info">
-              <a href="tel:+919838683260">+91 9838683260</a>
-            </div>
-          </li>
-          <li class="contact-item">
             <div class="contact-icon"><i class="fas fa-envelope"></i></div>
             <div class="contact-info">
-              <a href="mailto:avinashverma3939@gmail.com">avinashverma3939@gmail.com</a>
+              <a href="mailto:aryansoni202006@gmail.com">aryansoni202006@gmail.com</a>
             </div>
           </li>
           <li class="contact-item">
             <div class="contact-icon"><i class="fas fa-map-marker-alt"></i></div>
             <div class="contact-info">
-              Medhayen Jagdishpur,<br/>Basti, India
-            </div>
-          </li>
-          <li class="contact-item">
-            <div class="contact-icon"><i class="fas fa-globe"></i></div>
-            <div class="contact-info">
-              <a href="https://eyot.insforge.site" target="_blank">eyot.insforge.site</a>
+              India
             </div>
           </li>
           <li class="contact-item">
             <div class="contact-icon"><i class="fab fa-github"></i></div>
             <div class="contact-info">
-              <a href="https://github.com/avinashverma39" target="_blank">github.com/avinashverma39</a>
+              <a href="https://github.com/adityasoni39" target="_blank">github.com/adityasoni39</a>
             </div>
           </li>
           <li class="contact-item">
             <div class="contact-icon"><i class="fab fa-linkedin-in"></i></div>
             <div class="contact-info">
-              <a href="https://www.linkedin.com/in/avinash39/" target="_blank">linkedin.com/in/avinash39</a>
-            </div>
-          </li>
-          <li class="contact-item">
-            <div class="contact-icon"><i class="fab fa-x-twitter"></i></div>
-            <div class="contact-info">
-              <a href="https://x.com/avinashverma39" target="_blank">x.com/avinashverma39</a>
+              <a href="https://www.linkedin.com/in/aditya-soni-7aa5722a4?utm_source=share_via&utm_content=profile&utm_medium=member_android" target="_blank">linkedin.com/in/aditya-soni</a>
             </div>
           </li>
         </ul>
@@ -782,54 +719,44 @@
         <h3 class="cv-section-title"><i class="fas fa-graduation-cap"></i> Education</h3>
         <div class="edu-timeline">
           <div class="edu-node">
-            <div class="edu-title">B.Tech (CSE)</div>
-            <div class="edu-inst">R. R. Institute of Modern Technology, Lucknow (RRIMT)</div>
+            <div class="edu-title">Bachelor of Technology — Computer Science (AI & ML)</div>
+            <div class="edu-inst">Currently pursuing B.Tech</div>
             <div class="edu-year">Pursuing</div>
           </div>
           <div class="edu-node">
-            <div class="edu-title">12th (Intermediate)</div>
-            <div class="edu-inst">U.P. Board</div>
-            <div class="edu-year">Year of Passing: 2025</div>
+            <div class="edu-title">Higher Secondary Education</div>
+            <div class="edu-inst">S.S.S.V Inter College</div>
           </div>
           <div class="edu-node">
-            <div class="edu-title">10th (High School)</div>
-            <div class="edu-inst">U.P. Board</div>
-            <div class="edu-year">Year of Passing: 2023</div>
+            <div class="edu-title">Secondary Education</div>
+            <div class="edu-inst">Pioneer Public School</div>
           </div>
         </div>
       </div>
 
       <!-- SKILLS -->
       <div>
-        <h3 class="cv-section-title"><i class="fas fa-cogs"></i> Professional Skills</h3>
+        <h3 class="cv-section-title"><i class="fas fa-cogs"></i> Technical Skills</h3>
         <div class="skills-list">
           <div class="skill-bar-wrap">
-            <div class="skill-info"><span>C++ Development</span><span>80%</span></div>
+            <div class="skill-info"><span>HTML</span><span>85%</span></div>
+            <div class="skill-track"><div class="skill-fill" data-pct="85"></div></div>
+          </div>
+          <div class="skill-bar-wrap">
+            <div class="skill-info"><span>CSS</span><span>80%</span></div>
             <div class="skill-track"><div class="skill-fill" data-pct="80"></div></div>
           </div>
           <div class="skill-bar-wrap">
-            <div class="skill-info"><span>AI Web Architectures</span><span>75%</span></div>
+            <div class="skill-info"><span>Java</span><span>75%</span></div>
             <div class="skill-track"><div class="skill-fill" data-pct="75"></div></div>
           </div>
           <div class="skill-bar-wrap">
-            <div class="skill-info"><span>Problem Solving</span><span>65%</span></div>
+            <div class="skill-info"><span>C</span><span>70%</span></div>
+            <div class="skill-track"><div class="skill-fill" data-pct="70"></div></div>
+          </div>
+          <div class="skill-bar-wrap">
+            <div class="skill-info"><span>AI Design</span><span>65%</span></div>
             <div class="skill-track"><div class="skill-fill" data-pct="65"></div></div>
-          </div>
-          <div class="skill-bar-wrap">
-            <div class="skill-info"><span>HTML / CSS</span><span>80%</span></div>
-            <div class="skill-track"><div class="skill-fill" data-pct="80"></div></div>
-          </div>
-          <div class="skill-bar-wrap">
-            <div class="skill-info"><span>JavaScript / React</span><span>60%</span></div>
-            <div class="skill-track"><div class="skill-fill" data-pct="60"></div></div>
-          </div>
-          <div class="skill-bar-wrap">
-            <div class="skill-info"><span>Java Development</span><span>80%</span></div>
-            <div class="skill-track"><div class="skill-fill" data-pct="80"></div></div>
-          </div>
-          <div class="skill-bar-wrap">
-            <div class="skill-info"><span>Time Management</span><span>90%</span></div>
-            <div class="skill-track"><div class="skill-fill" data-pct="90"></div></div>
           </div>
         </div>
       </div>
@@ -837,7 +764,7 @@
       <!-- QUOTE -->
       <div class="sidebar-quote">
         <i class="fas fa-quote-left"></i>
-        "Turning ideas into intelligent & interactive digital experiences."
+        "Crafting the future with artificial intelligence, clean code, and practical innovation."
       </div>
     </div>
 
@@ -846,60 +773,60 @@
       
       <!-- HEADER INFO -->
       <div class="header-info anim-fade-up">
-        <h1>AVINASH <span>VERMA</span></h1>
-        <h2>C++ &amp; AI Web Developer</h2>
-        <p>Hello, I'm a C++ and AI Web Developer with freshers experience and a strong focus on solving algorithms, designing clean layouts, and creating next-generation web architectures.</p>
+        <h1>ADITYA <span>SONI</span></h1>
+        <h2>B.Tech CSE (AI & ML) Student | Developer | AI Enthusiast</h2>
+        <p>A passionate Computer Science student specializing in Artificial Intelligence & Machine Learning. Enthusiastic about programming, web development, AI-based design, and building practical technology projects that create meaningful impact.</p>
       </div>
 
       <!-- METRICS GRID -->
       <div class="metrics-grid anim-fade-up anim-delay-1">
         <div class="metric-card">
-          <div class="metric-icon"><i class="fas fa-briefcase"></i></div>
-          <div class="metric-val">Fresher</div>
-          <div class="metric-lbl">Real Project Experience</div>
+          <div class="metric-icon"><i class="fas fa-brain"></i></div>
+          <div class="metric-val">AI & ML</div>
+          <div class="metric-lbl">Specialization</div>
         </div>
         <div class="metric-card">
           <div class="metric-icon"><i class="fas fa-code"></i></div>
           <div class="metric-val">3+</div>
-          <div class="metric-lbl">Projects Completed</div>
+          <div class="metric-lbl">Projects Built</div>
         </div>
         <div class="metric-card">
-          <div class="metric-icon"><i class="fas fa-users"></i></div>
+          <div class="metric-icon"><i class="fas fa-layer-group"></i></div>
           <div class="metric-val">5+</div>
-          <div class="metric-lbl">Achievements</div>
+          <div class="metric-lbl">Core Technologies</div>
         </div>
         <div class="metric-card">
           <div class="metric-icon"><i class="fas fa-award"></i></div>
           <div class="metric-val">100%</div>
-          <div class="metric-lbl">Dedication &amp; Quality</div>
+          <div class="metric-lbl">Dedication &amp; Focus</div>
         </div>
       </div>
 
       <!-- ABOUT ME -->
       <div class="anim-fade-up anim-delay-2">
         <h3 class="main-section-title"><i class="fas fa-user-tie"></i> About Me</h3>
-        <p style="font-size: 13.5px; line-height: 1.6; color: var(--text-secondary);">
-          I am a passionate C++ and AI Web Developer with a strong foundation in designing and building modern, responsive, and user-friendly web applications. I love solving complex structural problems, designing smooth layouts, and continuously learning new technologies to deliver high-performance digital experiences.
+        <p style="font-size: 13.5px; line-height: 1.7; color: var(--text-secondary);">
+          I am a B.Tech Computer Science student specializing in Artificial Intelligence & Machine Learning. Driven by a deep curiosity for technology and intelligent systems, I focus on software development, web development, programming, and AI-based design. I enjoy learning cutting-edge tools and applying them to solve problems through practical, user-focused applications.
         </p>
       </div>
 
-      <!-- EXPERIENCE -->
+      <!-- AREAS OF INTEREST & HIGHLIGHTS -->
       <div class="anim-fade-up anim-delay-2">
-        <h3 class="main-section-title"><i class="fas fa-history"></i> Experience</h3>
+        <h3 class="main-section-title"><i class="fas fa-lightbulb"></i> Focus Areas &amp; Interests</h3>
         <div class="exp-card">
           <div class="exp-header">
             <div>
-              <div class="exp-role">Web Developer &amp; Designer</div>
-              <div class="exp-company">Freelance / Independent Contractor</div>
+              <div class="exp-role">Computer Science (AI &amp; ML) Undergrad</div>
+              <div class="exp-company">B.Tech Student &amp; Developer</div>
             </div>
-            <span class="exp-duration">Real Project Experience</span>
+            <span class="exp-duration">Current Focus</span>
           </div>
           <ul class="exp-list">
-            <li>Designed and developed responsive, high-performance, and user-friendly websites.</li>
-            <li>Built custom and highly optimized front-end interfaces using HTML, CSS, and JavaScript and AI tools.</li>
-            <li>Managed full-stack web projects from initial architectural concepts all the way to cloud deployment.</li>
-            <li>Collaborated closely with clients to dissect system requirements and engineer tailored, high-quality answers.</li>
-            <li>Obsessed over clean code practices, browser compatibility, and pixel-perfect design metrics.</li>
+            <li><strong>Software &amp; Web Development:</strong> Building clean, responsive, and intuitive web interfaces using HTML, CSS, and modern web standards.</li>
+            <li><strong>Programming Foundation:</strong> Strengthening algorithmic thinking and object-oriented concepts with C and Java.</li>
+            <li><strong>Artificial Intelligence &amp; Machine Learning:</strong> Exploring intelligent systems, AI models, and algorithmic problem-solving.</li>
+            <li><strong>AI-Based Design:</strong> Leveraging AI tools and creative workflows for modern user experience and interface design.</li>
+            <li><strong>Continuous Learning:</strong> Eager to learn, experiment, and collaborate on real-world engineering projects.</li>
           </ul>
         </div>
       </div>
@@ -911,12 +838,25 @@
           
           <div class="project-card">
             <div class="proj-top">
-              <div class="proj-icon"><i class="fas fa-university"></i></div>
-              <div class="proj-name">Bankmanagement System</div>
+              <div class="proj-icon"><i class="fas fa-code"></i></div>
+              <div class="proj-name">Web Application Project</div>
             </div>
-            <div class="proj-desc">A secure, multi-client banking system designed in Java. Manages customer accounts, balances, transactions, and interest calculations.</div>
+            <div class="proj-desc">Interactive web application project showcasing modern layout design, clean CSS styling, and structured coding practices.</div>
             <div class="proj-links">
-              <a href="https://github.com/avinashverma39/JAVA_PROJECT" target="_blank" class="proj-link">
+              <a href="https://github.com/adityasoni39" target="_blank" class="proj-link">
+                <i class="fab fa-github"></i> GitHub Repo
+              </a>
+            </div>
+          </div>
+
+          <div class="project-card">
+            <div class="proj-top">
+              <div class="proj-icon"><i class="fas fa-robot"></i></div>
+              <div class="proj-name">AI / ML Project</div>
+            </div>
+            <div class="proj-desc">Hands-on AI-driven project exploring machine learning concepts, data processing, and intelligent application design.</div>
+            <div class="proj-links">
+              <a href="https://github.com/adityasoni39" target="_blank" class="proj-link">
                 <i class="fab fa-github"></i> GitHub Repo
               </a>
             </div>
@@ -925,76 +865,24 @@
           <div class="project-card">
             <div class="proj-top">
               <div class="proj-icon"><i class="fas fa-laptop-code"></i></div>
-              <div class="proj-name">Portfolio Website</div>
+              <div class="proj-name">Personal Portfolio Website</div>
             </div>
-            <div class="proj-desc">Personal portfolio website built with HTML, CSS, JavaScript. Designed to showcase modern layouts, projects, and animated skill timelines.</div>
+            <div class="proj-desc">Responsive personal developer portfolio built with modern HTML, CSS, and JavaScript, featuring interactive animations and theme toggle.</div>
             <div class="proj-links">
-              <a href="https://github.com/avinashverma39/portfolio" target="_blank" class="proj-link">
-                <i class="fab fa-github"></i> GitHub Repo
-              </a>
-            </div>
-          </div>
-          
-          <!-- <div class="project-card">
-            <div class="proj-top">
-              <div class="proj-icon"><i class="fas fa-chart-line"></i></div>
-              <div class="proj-name">Dashboard UI</div>
-            </div>
-            <div class="proj-desc">Premium analytics dashboard UI featuring real-time data flow, dynamic chart updates, and highly polished glassmorphic styling tokens.</div>
-            <div class="proj-links">
-              <a href="https://github.com/avinashverma39" target="_blank" class="proj-link">
-                <i class="fab fa-github"></i> GitHub Repo
-              </a>
-            </div>
-          </div> -->
-          
-          <!-- <div class="project-card">
-            <div class="proj-top">
-              <div class="proj-icon"><i class="fas fa-pager"></i></div>
-              <div class="proj-name">Landing Page</div>
-            </div>
-            <div class="proj-desc">Clean, conversion-optimized landing page for high-tech SaaS platforms with interactive layouts and lightning-fast load times.</div>
-            <div class="proj-links">
-              <a href="https://github.com/avinashverma39" target="_blank" class="proj-link">
-                <i class="fab fa-github"></i> GitHub Repo
-              </a>
-            </div>
-          </div> -->
-          
-          <div class="project-card">
-            <div class="proj-top">
-              <div class="proj-icon"><i class="fas fa-store"></i></div>
-              <div class="proj-name">Business Website</div>
-            </div>
-            <div class="proj-desc">Multi-page business application with professional layout grids, inquiry form validation, and responsive mobile-first views.</div>
-            <div class="proj-links">
-              <a href="https://github.com/avinashverma39/portfolio" target="_blank" class="proj-link">
+              <a href="https://github.com/adityasoni39" target="_blank" class="proj-link">
                 <i class="fab fa-github"></i> GitHub Repo
               </a>
             </div>
           </div>
 
-          <!-- <div class="project-card">
-            <div class="proj-top">
-              <div class="proj-icon"><i class="fas fa-blog"></i></div>
-              <div class="proj-name">Blog Website</div>
-            </div>
-            <div class="proj-desc">Dynamic blog layout including real-time text search, structured categorization tags, and clean readability profiles.</div>
-            <div class="proj-links">
-              <a href="https://github.com/avinashverma39" target="_blank" class="proj-link">
-                <i class="fab fa-github"></i> GitHub Repo
-              </a>
-            </div>
-          </div> -->
-
           <div class="project-card">
             <div class="proj-top">
-              <div class="proj-icon"><i class="fas fa-palette"></i></div>
-              <div class="proj-name">Portfolio v2</div>
+              <div class="proj-icon"><i class="fas fa-terminal"></i></div>
+              <div class="proj-name">Core Programming Project</div>
             </div>
-            <div class="proj-desc">Advanced version of my personal portfolio utilizing modern micro-interactions, CSS transitions, and an optimized user flow.</div>
+            <div class="proj-desc">Software application focusing on core programming concepts, data structures, and logical problem-solving in C/Java.</div>
             <div class="proj-links">
-              <a href="https://github.com/avinashverma39/portfolio" target="_blank" class="proj-link">
+              <a href="https://github.com/adityasoni39" target="_blank" class="proj-link">
                 <i class="fab fa-github"></i> GitHub Repo
               </a>
             </div>
@@ -1003,27 +891,14 @@
         </div>
       </div>
 
-      <!-- HOBBIES -->
-      <div class="anim-fade-up anim-delay-3">
-        <h3 class="main-section-title"><i class="fas fa-gamepad"></i> Hobbies</h3>
-        <div class="hobbies-flex">
-          <div class="hobby-item"><i class="fas fa-code"></i> Coding</div>
-          <div class="hobby-item"><i class="fas fa-book"></i> Reading</div>
-          <div class="hobby-item"><i class="fas fa-paint-brush"></i> Designing</div>
-          <div class="hobby-item"><i class="fas fa-gamepad"></i> Gaming</div>
-          <div class="hobby-item"><i class="fas fa-plane"></i> Traveling</div>
-          <div class="hobby-item"><i class="fas fa-camera"></i> Photography</div>
-        </div>
-      </div>
-
-      <!-- LET'S WORK TOGETHER -->
+      <!-- LET'S CONNECT -->
       <div class="work-banner anim-fade-up anim-delay-3">
         <div class="banner-text">
-          <h3>Let's Work Together!</h3>
-          <p>I'm always open to discussing new opportunities, systems design, and exciting projects.</p>
+          <h3>Let's Connect &amp; Collaborate!</h3>
+          <p>I'm always open to discussing new technology opportunities, AI development, and exciting projects.</p>
         </div>
-        <a href="mailto:avinashverma3939@gmail.com" class="btn-mail">
-          <i class="fas fa-envelope"></i> Message Me
+        <a href="mailto:aryansoni202006@gmail.com" class="btn-mail">
+          <i class="fas fa-envelope"></i> Contact Me
         </a>
       </div>
 
@@ -1068,7 +943,7 @@
         }, 80);
       });
 
-      const interactives = document.querySelectorAll('a, button, input, textarea, .project-card, .hobby-card, .metric-card');
+      const interactives = document.querySelectorAll('a, button, input, textarea, .project-card, .metric-card');
       interactives.forEach(el => {
         el.addEventListener('mouseenter', () => {
           cursor.style.width = '18px';
@@ -1134,7 +1009,7 @@
       const btn = document.getElementById('themeToggle');
       const html = document.documentElement;
       if (!btn) return;
-      const saved = localStorage.getItem('av-theme');
+      const saved = localStorage.getItem('as-theme');
       const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
       html.setAttribute('data-theme', saved || (prefersDark ? 'dark' : 'light'));
       btn.addEventListener('click', () => {
@@ -1142,7 +1017,7 @@
         html.classList.add('theme-transitioning');
         setTimeout(() => html.classList.remove('theme-transitioning'), 600);
         html.setAttribute('data-theme', next);
-        localStorage.setItem('av-theme', next);
+        localStorage.setItem('as-theme', next);
       });
     })();
 
