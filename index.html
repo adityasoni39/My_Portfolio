@@ -1,11 +1,12 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en" data-theme="dark">
-
-<head>
+  <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="description"
-        content="Aditya Soni — B.Tech CSE (AI & ML) Student, Developer, and AI Enthusiast. Explore my portfolio showcasing projects, skills, and education." />
+    <meta
+      name="description"
+      content="Aditya Soni — B.Tech CSE (AI & ML) Student, Developer, and AI Enthusiast. Explore my portfolio showcasing projects, skills, and education."
+    />
     <title>Aditya Soni — AI & ML Developer</title>
     <link rel="stylesheet" href="index.css" />
     <!-- Google Fonts: Poppins + Space Mono -->
@@ -13,628 +14,701 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-        href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Space+Mono:wght@400;700&display=swap"
-        rel="stylesheet" />
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Space+Mono:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
 
     <!-- Font Awesome Icons -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    />
 
     <!-- Anime.js Engine & GSAP + ScrollTrigger -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" defer></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js" defer></script>
-</head>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"
+      defer
+    ></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"
+      defer
+    ></script>
+  </head>
 
-<body>
-
+  <body>
     <!-- ========== SCROLL PROGRESS BAR ========== -->
     <div class="scroll-progress-bar" id="scrollProgress"></div>
 
     <!-- ========== CURSOR ========== -->
     <div class="cursor" id="cursor"></div>
-    <div class="cursor-follower" id="cursorFollower"><span class="cursor-text">VIEW</span></div>
+    <div class="cursor-follower" id="cursorFollower">
+      <span class="cursor-text">VIEW</span>
+    </div>
 
     <!-- ========== NAVIGATION ========== -->
     <nav class="navbar" id="navbar">
-        <div class="nav-container">
-            <!-- Brand: Radar Pulse + Logo -->
-            <div class="nav-brand">
-                <div class="nav-status-pulse" title="Available for opportunities">
-                    <span class="pulse-ring"></span>
-                    <span class="pulse-dot"></span>
-                </div>
-                <a href="#home" class="nav-logo">
-                    <span class="logo-bracket">&lt;</span><span class="logo-text">AS</span><span class="logo-bracket">
-                        /&gt;</span>
-                </a>
-            </div>
-
-            <!-- Nav Links -->
-            <ul class="nav-links" id="navLinks">
-                <li><a href="#home" class="nav-link active">Home</a></li>
-                <li><a href="#about" class="nav-link">About</a></li>
-                <li><a href="#education" class="nav-link">Education</a></li>
-                <li><a href="#skills" class="nav-link">Skills</a></li>
-                <li><a href="#projects" class="nav-link">Projects</a></li>
-                <li><a href="#contact" class="nav-link">Contact</a></li>
-            </ul>
-
-            <!-- Theme Toggle -->
-            <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme">
-                <span class="theme-icon-wrap">
-                    <i class="fa-solid fa-sun sun-icon"></i>
-                    <i class="fa-solid fa-moon moon-icon"></i>
-                </span>
-            </button>
-
-            <!-- Hamburger Menu (Mobile) -->
-            <button class="hamburger" id="hamburger" aria-label="Toggle menu">
-                <span></span>
-                <span></span>
-                <span></span>
-            </button>
+      <div class="nav-container">
+        <!-- Brand: Radar Pulse + Logo -->
+        <div class="nav-brand">
+          <div class="nav-status-pulse" title="Available for opportunities">
+            <span class="pulse-ring"></span>
+            <span class="pulse-dot"></span>
+          </div>
+          <a href="#home" class="nav-logo">
+            <span class="logo-bracket">&lt;</span
+            ><span class="logo-text">AS</span
+            ><span class="logo-bracket"> /&gt;</span>
+          </a>
         </div>
+
+        <!-- Nav Links -->
+        <ul class="nav-links" id="navLinks">
+          <li><a href="#home" class="nav-link active">Home</a></li>
+          <li><a href="#about" class="nav-link">About</a></li>
+          <li><a href="#education" class="nav-link">Education</a></li>
+          <li><a href="#skills" class="nav-link">Skills</a></li>
+          <li><a href="#projects" class="nav-link">Projects</a></li>
+          <li><a href="#contact" class="nav-link">Contact</a></li>
+        </ul>
+
+        <!-- Theme Toggle -->
+        <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme">
+          <span class="theme-icon-wrap">
+            <i class="fa-solid fa-sun sun-icon"></i>
+            <i class="fa-solid fa-moon moon-icon"></i>
+          </span>
+        </button>
+
+        <!-- Hamburger Menu (Mobile) -->
+        <button class="hamburger" id="hamburger" aria-label="Toggle menu">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </div>
     </nav>
 
     <!-- ========== HERO SECTION ========== -->
     <section class="hero" id="home">
-        <!-- Animated background grid -->
-        <div class="hero-grid"></div>
-        <!-- Extra ambient orbs -->
-        <div class="hero-orb hero-orb-1"></div>
-        <div class="hero-orb hero-orb-2"></div>
-        <!-- Particle canvas -->
-        <canvas class="hero-particles" id="particleCanvas"></canvas>
+      <!-- Animated background grid -->
+      <div class="hero-grid"></div>
+      <!-- Extra ambient orbs -->
+      <div class="hero-orb hero-orb-1"></div>
+      <div class="hero-orb hero-orb-2"></div>
+      <!-- Particle canvas -->
+      <canvas class="hero-particles" id="particleCanvas"></canvas>
 
-        <div class="hero-container">
-            <!-- Left: Text Content -->
-            <div class="hero-content">
-                <div class="hero-tag" data-entrance="tag">
-                    <span class="dot"></span> Available for opportunities
-                </div>
-                <h1 class="hero-title" data-entrance="title">
-                    <span id="typedGreeting"></span><br />
-                    <span class="hero-role" id="typedRole"></span>
-                </h1>
-                <p class="hero-description" id="heroDesc" data-entrance="desc" style="min-height:3.5rem;"></p>
+      <div class="hero-container">
+        <!-- Left: Text Content -->
+        <div class="hero-content">
+          <div class="hero-tag" data-entrance="tag">
+            <span class="dot"></span> Available for opportunities
+          </div>
+          <h1 class="hero-title" data-entrance="title">
+            <span id="typedGreeting"></span><br />
+            <span class="hero-role" id="typedRole"></span>
+          </h1>
+          <p
+            class="hero-description"
+            id="heroDesc"
+            data-entrance="desc"
+            style="min-height: 3.5rem"
+          ></p>
 
-                <!-- CTA Buttons -->
-                <div class="hero-buttons" data-entrance="buttons">
-                    <a href="#projects" class="btn btn-primary">
-                        <i class="fa-solid fa-briefcase"></i> View My Work
-                    </a>
-                    <a href="#contact" class="btn btn-outline">
-                        <i class="fa-solid fa-paper-plane"></i> Contact Me
-                    </a>
-                </div>
+          <!-- CTA Buttons -->
+          <div class="hero-buttons" data-entrance="buttons">
+            <a href="#projects" class="btn btn-primary">
+              <i class="fa-solid fa-briefcase"></i> View My Work
+            </a>
+            <a href="#contact" class="btn btn-outline">
+              <i class="fa-solid fa-paper-plane"></i> Contact Me
+            </a>
+          </div>
 
-                <!-- Social Links -->
-                <div class="social-links" data-entrance="social">
-                    <a href="https://github.com/adityasoni39" target="_blank" class="social-icon" aria-label="GitHub">
-                        <i class="fa-brands fa-github"></i>
-                    </a>
-                    <a href="https://www.linkedin.com/in/aditya-soni-7aa5722a4?utm_source=share_via&utm_content=profile&utm_medium=member_android"
-                        target="_blank" class="social-icon" aria-label="LinkedIn">
-                        <i class="fa-brands fa-linkedin-in"></i>
-                    </a>
-                    <a href="mailto:aryansoni202006@gmail.com" class="social-icon" aria-label="Email">
-                        <i class="fa-solid fa-envelope"></i>
-                    </a>
-                </div>
-            </div>
-
-            <!-- Right: Profile Image -->
-            <div class="hero-image-wrapper">
-                <div class="hero-image-frame">
-                    <!-- Decorative rings -->
-                    <div class="ring ring-1"></div>
-                    <div class="ring ring-2"></div>
-                    <!-- Profile image -->
-                    <div class="profile-avatar">
-                        <span><img src="IMG_20250921_0254421.jpg.jpeg" alt="Aditya Soni"></span>
-                    </div>
-                    <!-- Floating badges -->
-                    <div class="badge badge-1">
-                        <i class="fa-solid fa-robot"></i>
-                        <span>AI & ML</span>
-                    </div>
-                    <div class="badge badge-2">
-                        <i class="fa-solid fa-graduation-cap"></i>
-                        <span>BTech CSE</span>
-                    </div>
-                </div>
-            </div>
+          <!-- Social Links -->
+          <div class="social-links" data-entrance="social">
+            <a
+              href="https://github.com/adityasoni39"
+              target="_blank"
+              class="social-icon"
+              aria-label="GitHub"
+            >
+              <i class="fa-brands fa-github"></i>
+            </a>
+            <a
+              href="https://www.linkedin.com/in/aditya-soni-7aa5722a4?utm_source=share_via&utm_content=profile&utm_medium=member_android"
+              target="_blank"
+              class="social-icon"
+              aria-label="LinkedIn"
+            >
+              <i class="fa-brands fa-linkedin-in"></i>
+            </a>
+            <a
+              href="mailto:aryansoni202006@gmail.com"
+              class="social-icon"
+              aria-label="Email"
+            >
+              <i class="fa-solid fa-envelope"></i>
+            </a>
+          </div>
         </div>
 
-        <!-- Scroll indicator -->
-        <div class="scroll-indicator">
-            <span>Scroll Down</span>
-            <div class="scroll-line"></div>
+        <!-- Right: Profile Image -->
+        <div class="hero-image-wrapper">
+          <div class="hero-image-frame">
+            <!-- Decorative rings -->
+            <div class="ring ring-1"></div>
+            <div class="ring ring-2"></div>
+            <!-- Profile image -->
+            <div class="profile-avatar">
+              <span
+                ><img src="IMG_20250921_0254421.jpg.jpeg" alt="Aditya Soni"
+              /></span>
+            </div>
+            <!-- Floating badges -->
+            <div class="badge badge-1">
+              <i class="fa-solid fa-robot"></i>
+              <span>AI & ML</span>
+            </div>
+            <div class="badge badge-2">
+              <i class="fa-solid fa-graduation-cap"></i>
+              <span>BTech CSE</span>
+            </div>
+          </div>
         </div>
+      </div>
+
+      <!-- Scroll indicator -->
+      <div class="scroll-indicator">
+        <span>Scroll Down</span>
+        <div class="scroll-line"></div>
+      </div>
     </section>
 
     <!-- ========== ABOUT SECTION ========== -->
     <section class="section about-section" id="about">
-        <div class="container">
-            <div class="section-header">
-                <span class="section-tag"> who am i</span>
-                <h2 class="section-title">About <span class="highlight">Me</span></h2>
-            </div>
-
-            <div class="about-grid">
-                <!-- Left: Info cards -->
-                <div class="about-stats">
-                    <div class="stat-card reveal">
-                        <i class="fa-solid fa-laptop-code"></i>
-                        <h3>3+</h3>
-                        <p>Projects Built</p>
-                    </div>
-                    <div class="stat-card reveal">
-                        <i class="fa-solid fa-code-branch"></i>
-                        <h3>5+</h3>
-                        <p>Technologies</p>
-                    </div>
-                    <div class="stat-card reveal">
-                        <i class="fa-solid fa-brain"></i>
-                        <h3>AI</h3>
-                        <p>Enthusiast</p>
-                    </div>
-                    <div class="stat-card reveal">
-                        <i class="fa-solid fa-mug-hot"></i>
-                        <h3>∞</h3>
-                        <p>Cups of Coffee</p>
-                    </div>
-                </div>
-
-                <!-- Right: Text -->
-                <div class="about-text">
-                    <p>
-                        I'm <strong>Aditya Soni</strong>, a passionate
-                        B.Tech Computer Science student specializing in
-                        <strong>Artificial Intelligence & Machine
-                            Learning</strong>.
-                        I'm driven by a deep curiosity for how technology
-                        can solve real-world problems.
-                    </p>
-                    <p>
-                        My interests span across <strong>software
-                            development</strong>,
-                        <strong>web development</strong>,
-                        <strong>artificial intelligence</strong>, and
-                        <strong>AI-based design</strong>. I love exploring
-                        how intelligent systems work and enjoy building
-                        practical projects that merge creativity with
-                        technology.
-                    </p>
-                    <p>
-                        I'm constantly learning and expanding my skillset
-                        — whether it's writing clean code,
-                        designing user interfaces, or diving into the
-                        latest AI research. When I'm not coding, you'll
-                        find me exploring new technologies and working on
-                        ideas that excite me.
-                    </p>
-
-                    <div class="about-details">
-                        <div class="detail-item">
-                            <i class="fa-solid fa-user"></i>
-                            <span><strong>Name:</strong> Aditya
-                                Soni</span>
-                        </div>
-                        <div class="detail-item">
-                            <i class="fa-solid fa-graduation-cap"></i>
-                            <span><strong>Course:</strong> BTech CSE
-                                (AI & ML)</span>
-                        </div>
-                        <div class="detail-item">
-                            <i class="fa-solid fa-location-dot"></i>
-                            <span><strong>Location:</strong> India</span>
-                        </div>
-                        <div class="detail-item">
-                            <i class="fa-solid fa-circle-check"></i>
-                            <span><strong>Status:</strong> Open to
-                                Learn</span>
-                        </div>
-                    </div>
-
-                    <div class="about-buttons">
-                        <a href="#contact" class="btn btn-primary">
-                            <i class="fa-solid fa-handshake"></i> Let's
-                            Connect
-                        </a>
-                        <a href="#projects" class="btn btn-outline">
-                            <i class="fa-solid fa-code"></i> View Projects
-                        </a>
-                    </div>
-                </div>
-            </div>
+      <div class="container">
+        <div class="section-header">
+          <span class="section-tag"> who am i</span>
+          <h2 class="section-title">About <span class="highlight">Me</span></h2>
         </div>
+
+        <div class="about-grid">
+          <!-- Left: Info cards -->
+          <div class="about-stats">
+            <div class="stat-card reveal">
+              <i class="fa-solid fa-laptop-code"></i>
+              <h3>3+</h3>
+              <p>Projects Built</p>
+            </div>
+            <div class="stat-card reveal">
+              <i class="fa-solid fa-code-branch"></i>
+              <h3>5+</h3>
+              <p>Technologies</p>
+            </div>
+            <div class="stat-card reveal">
+              <i class="fa-solid fa-brain"></i>
+              <h3>AI</h3>
+              <p>Enthusiast</p>
+            </div>
+            <div class="stat-card reveal">
+              <i class="fa-solid fa-mug-hot"></i>
+              <h3>∞</h3>
+              <p>Cups of Coffee</p>
+            </div>
+          </div>
+
+          <!-- Right: Text -->
+          <div class="about-text">
+            <p>
+              I'm <strong>Aditya Soni</strong>, a passionate B.Tech Computer
+              Science student specializing in
+              <strong>Artificial Intelligence & Machine Learning</strong>. I'm
+              driven by a deep curiosity for how technology can solve real-world
+              problems.
+            </p>
+            <p>
+              My interests span across <strong>software development</strong>,
+              <strong>web development</strong>,
+              <strong>artificial intelligence</strong>, and
+              <strong>AI-based design</strong>. I love exploring how intelligent
+              systems work and enjoy building practical projects that merge
+              creativity with technology.
+            </p>
+            <p>
+              I'm constantly learning and expanding my skillset — whether it's
+              writing clean code, designing user interfaces, or diving into the
+              latest AI research. When I'm not coding, you'll find me exploring
+              new technologies and working on ideas that excite me.
+            </p>
+
+            <div class="about-details">
+              <div class="detail-item">
+                <i class="fa-solid fa-user"></i>
+                <span><strong>Name:</strong> Aditya Soni</span>
+              </div>
+              <div class="detail-item">
+                <i class="fa-solid fa-graduation-cap"></i>
+                <span><strong>Course:</strong> BTech CSE (AI & ML)</span>
+              </div>
+              <div class="detail-item">
+                <i class="fa-solid fa-location-dot"></i>
+                <span><strong>Location:</strong> India</span>
+              </div>
+              <div class="detail-item">
+                <i class="fa-solid fa-circle-check"></i>
+                <span><strong>Status:</strong> Open to Learn</span>
+              </div>
+            </div>
+
+            <div class="about-buttons">
+              <a href="#contact" class="btn btn-primary">
+                <i class="fa-solid fa-handshake"></i> Let's Connect
+              </a>
+              <a href="#projects" class="btn btn-outline">
+                <i class="fa-solid fa-code"></i> View Projects
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
     </section>
 
     <!-- ========== EDUCATION SECTION ========== -->
     <section class="section education-section" id="education">
-        <div class="container">
-            <div class="section-header">
-                <span class="section-tag"> my journey</span>
-                <h2 class="section-title">Education & <span class="highlight">Learning</span></h2>
-            </div>
-
-            <div class="timeline">
-                <!-- Timeline Item 1 -->
-                <div class="timeline-item">
-                    <div class="timeline-dot"></div>
-                    <div class="timeline-card">
-                        <div class="timeline-header">
-                            <div>
-                                <h3>Bachelor of Technology — Computer
-                                    Science (AI & ML)</h3>
-                                <span class="timeline-org">Currently
-                                    Pursuing B.Tech</span>
-                            </div>
-                            <span class="timeline-year">Pursuing</span>
-                        </div>
-                        <p>
-                            Pursuing a B.Tech in Computer Science with
-                            specialization in Artificial Intelligence &
-                            Machine Learning. Focusing on building a
-                            strong foundation in programming, data
-                            structures, algorithms, and AI technologies.
-                        </p>
-                        <div class="timeline-tags">
-                            <span>AI & ML</span><span>Programming</span><span>Web
-                                Dev</span>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Timeline Item 2 -->
-                <div class="timeline-item">
-                    <div class="timeline-dot"></div>
-                    <div class="timeline-card">
-                        <div class="timeline-header">
-                            <div>
-                                <h3>Higher Secondary Education</h3>
-                                <span class="timeline-org">S.S.S.V Inter
-                                    College</span>
-                            </div>
-                        </div>
-                        <p>
-                            Completed higher secondary education,
-                            developing a strong analytical mindset and
-                            foundational knowledge that paved the way
-                            for pursuing computer science.
-                        </p>
-                    </div>
-                </div>
-
-                <!-- Timeline Item 3 -->
-                <div class="timeline-item">
-                    <div class="timeline-dot"></div>
-                    <div class="timeline-card">
-                        <div class="timeline-header">
-                            <div>
-                                <h3>Secondary Education</h3>
-                                <span class="timeline-org">Pioneer Public
-                                    School</span>
-                            </div>
-                        </div>
-                        <p>
-                            Completed secondary education with a growing
-                            interest in computers, technology, and
-                            logical problem-solving.
-                        </p>
-                    </div>
-                </div>
-            </div>
+      <div class="container">
+        <div class="section-header">
+          <span class="section-tag"> my journey</span>
+          <h2 class="section-title">
+            Education & <span class="highlight">Learning</span>
+          </h2>
         </div>
+
+        <div class="timeline">
+          <!-- Timeline Item 1 -->
+          <div class="timeline-item">
+            <div class="timeline-dot"></div>
+            <div class="timeline-card">
+              <div class="timeline-header">
+                <div>
+                  <h3>Bachelor of Technology — Computer Science (AI & ML)</h3>
+                  <span class="timeline-org">Currently Pursuing B.Tech</span>
+                </div>
+                <span class="timeline-year">Pursuing</span>
+              </div>
+              <p>
+                Pursuing a B.Tech in Computer Science with specialization in
+                Artificial Intelligence & Machine Learning. Focusing on building
+                a strong foundation in programming, data structures, algorithms,
+                and AI technologies.
+              </p>
+              <div class="timeline-tags">
+                <span>AI & ML</span><span>Programming</span><span>Web Dev</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Timeline Item 2 -->
+          <div class="timeline-item">
+            <div class="timeline-dot"></div>
+            <div class="timeline-card">
+              <div class="timeline-header">
+                <div>
+                  <h3>Higher Secondary Education</h3>
+                  <span class="timeline-org">S.S.S.V Inter College</span>
+                </div>
+              </div>
+              <p>
+                Completed higher secondary education, developing a strong
+                analytical mindset and foundational knowledge that paved the way
+                for pursuing computer science.
+              </p>
+            </div>
+          </div>
+
+          <!-- Timeline Item 3 -->
+          <div class="timeline-item">
+            <div class="timeline-dot"></div>
+            <div class="timeline-card">
+              <div class="timeline-header">
+                <div>
+                  <h3>Secondary Education</h3>
+                  <span class="timeline-org">Pioneer Public School</span>
+                </div>
+              </div>
+              <p>
+                Completed secondary education with a growing interest in
+                computers, technology, and logical problem-solving.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
     </section>
 
     <!-- ========== SKILLS SECTION ========== -->
     <section class="section skills-section" id="skills">
-        <div class="container">
-            <div class="section-header">
-                <span class="section-tag"> what i know</span>
-                <h2 class="section-title">My <span class="highlight">Skills</span></h2>
-            </div>
-
-            <div class="skills-grid">
-                <!-- Web Technologies -->
-                <div class="skills-group">
-                    <h3 class="skills-group-title">
-                        <i class="fa-solid fa-globe"></i> Web Technologies
-                    </h3>
-                    <div class="skill-bar-list">
-                        <div class="skill-bar-item">
-                            <div class="skill-bar-info">
-                                <span>HTML</span><span class="skill-percent">85%</span>
-                            </div>
-                            <div class="skill-bar-track">
-                                <div class="skill-bar-fill" data-width="85"></div>
-                            </div>
-                        </div>
-                        <div class="skill-bar-item">
-                            <div class="skill-bar-info">
-                                <span>CSS</span><span class="skill-percent">80%</span>
-                            </div>
-                            <div class="skill-bar-track">
-                                <div class="skill-bar-fill" data-width="80"></div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Programming & AI -->
-                <div class="skills-group">
-                    <h3 class="skills-group-title">
-                        <i class="fa-solid fa-terminal"></i> Programming &
-                        AI
-                    </h3>
-                    <div class="skill-bar-list">
-                        <div class="skill-bar-item">
-                            <div class="skill-bar-info">
-                                <span>Java</span><span class="skill-percent">75%</span>
-                            </div>
-                            <div class="skill-bar-track">
-                                <div class="skill-bar-fill" data-width="75"></div>
-                            </div>
-                        </div>
-                        <div class="skill-bar-item">
-                            <div class="skill-bar-info">
-                                <span>C</span><span class="skill-percent">70%</span>
-                            </div>
-                            <div class="skill-bar-track">
-                                <div class="skill-bar-fill" data-width="70"></div>
-                            </div>
-                        </div>
-                        <div class="skill-bar-item">
-                            <div class="skill-bar-info">
-                                <span>AI Design</span><span class="skill-percent">65%</span>
-                            </div>
-                            <div class="skill-bar-track">
-                                <div class="skill-bar-fill" data-width="65"></div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Tech Icons Row -->
-            <div class="tech-icons">
-                <div class="tech-icon-card" title="HTML5">
-                    <i class="fa-brands fa-html5"></i>
-                    <span>HTML</span>
-                </div>
-                <div class="tech-icon-card" title="CSS3">
-                    <i class="fa-brands fa-css3-alt"></i>
-                    <span>CSS</span>
-                </div>
-                <div class="tech-icon-card" title="Java">
-                    <i class="fa-brands fa-java"></i>
-                    <span>Java</span>
-                </div>
-                <div class="tech-icon-card" title="C">
-                    <i class="fa-solid fa-c"></i>
-                    <span>C</span>
-                </div>
-                <div class="tech-icon-card" title="AI Design">
-                    <i class="fa-solid fa-wand-magic-sparkles"></i>
-                    <span>AI Design</span>
-                </div>
-            </div>
+      <div class="container">
+        <div class="section-header">
+          <span class="section-tag"> what i know</span>
+          <h2 class="section-title">
+            My <span class="highlight">Skills</span>
+          </h2>
         </div>
+
+        <div class="skills-grid">
+          <!-- Web Technologies -->
+          <div class="skills-group">
+            <h3 class="skills-group-title">
+              <i class="fa-solid fa-globe"></i> Web Technologies
+            </h3>
+            <div class="skill-bar-list">
+              <div class="skill-bar-item">
+                <div class="skill-bar-info">
+                  <span>HTML</span><span class="skill-percent">85%</span>
+                </div>
+                <div class="skill-bar-track">
+                  <div class="skill-bar-fill" data-width="85"></div>
+                </div>
+              </div>
+              <div class="skill-bar-item">
+                <div class="skill-bar-info">
+                  <span>CSS</span><span class="skill-percent">80%</span>
+                </div>
+                <div class="skill-bar-track">
+                  <div class="skill-bar-fill" data-width="80"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Programming & AI -->
+          <div class="skills-group">
+            <h3 class="skills-group-title">
+              <i class="fa-solid fa-terminal"></i> Programming & AI
+            </h3>
+            <div class="skill-bar-list">
+              <div class="skill-bar-item">
+                <div class="skill-bar-info">
+                  <span>Java</span><span class="skill-percent">75%</span>
+                </div>
+                <div class="skill-bar-track">
+                  <div class="skill-bar-fill" data-width="75"></div>
+                </div>
+              </div>
+              <div class="skill-bar-item">
+                <div class="skill-bar-info">
+                  <span>C</span><span class="skill-percent">70%</span>
+                </div>
+                <div class="skill-bar-track">
+                  <div class="skill-bar-fill" data-width="70"></div>
+                </div>
+              </div>
+              <div class="skill-bar-item">
+                <div class="skill-bar-info">
+                  <span>AI Design</span><span class="skill-percent">65%</span>
+                </div>
+                <div class="skill-bar-track">
+                  <div class="skill-bar-fill" data-width="65"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Tech Icons Row -->
+        <div class="tech-icons">
+          <div class="tech-icon-card" title="HTML5">
+            <i class="fa-brands fa-html5"></i>
+            <span>HTML</span>
+          </div>
+          <div class="tech-icon-card" title="CSS3">
+            <i class="fa-brands fa-css3-alt"></i>
+            <span>CSS</span>
+          </div>
+          <div class="tech-icon-card" title="Java">
+            <i class="fa-brands fa-java"></i>
+            <span>Java</span>
+          </div>
+          <div class="tech-icon-card" title="C">
+            <i class="fa-solid fa-c"></i>
+            <span>C</span>
+          </div>
+          <div class="tech-icon-card" title="AI Design">
+            <i class="fa-solid fa-wand-magic-sparkles"></i>
+            <span>AI Design</span>
+          </div>
+        </div>
+      </div>
     </section>
 
     <!-- ========== PROJECTS SECTION ========== -->
     <section class="section projects-section" id="projects">
-        <div class="container">
-            <div class="section-header">
-                <span class="section-tag"> what i've built</span>
-                <h2 class="section-title">My <span class="highlight">Projects</span></h2>
-            </div>
-
-            <div class="projects-grid">
-                <!-- Project Card — Template 1 -->
-                <div class="project-card" data-category="web">
-                    <div class="project-card-top">
-                        <div class="project-icon-wrap">
-                            <i class="fa-solid fa-code"></i>
-                        </div>
-                        <div class="project-links">
-                            <a href="https://github.com/adityasoni39" target="_blank" aria-label="View Code">
-                                <i class="fa-brands fa-github"></i>
-                            </a>
-                            <a href="https://github.com/adityasoni39" target="_blank" aria-label="Live Demo">
-                                <i class="fa-solid fa-arrow-up-right-from-square"></i>
-                            </a>
-                        </div>
-                    </div>
-                    <h3>Project Coming Soon</h3>
-                    <p>
-                        I'm currently working on exciting projects that
-                        showcase my skills in web development and AI.
-                        Stay tuned for updates — this space will be
-                        filled with innovative work soon!
-                    </p>
-                    <div class="project-tags">
-                        <span>HTML</span><span>CSS</span><span>Java</span>
-                    </div>
-                </div>
-
-                <!-- Project Card — Template 2 -->
-                <div class="project-card" data-category="ai">
-                    <div class="project-card-top">
-                        <div class="project-icon-wrap">
-                            <i class="fa-solid fa-robot"></i>
-                        </div>
-                        <div class="project-links">
-                            <a href="https://github.com/adityasoni39" target="_blank" aria-label="View Code">
-                                <i class="fa-brands fa-github"></i>
-                            </a>
-                            <a href="https://github.com/adityasoni39" target="_blank" aria-label="Live Demo">
-                                <i class="fa-solid fa-arrow-up-right-from-square"></i>
-                            </a>
-                        </div>
-                    </div>
-                    <h3>AI Project Coming Soon</h3>
-                    <p>
-                        An AI-powered project is in the works, combining
-                        my passion for artificial intelligence with
-                        practical development skills.
-                        Check back for details!
-                    </p>
-                    <div class="project-tags">
-                        <span>AI</span><span>C</span><span>Design</span>
-                    </div>
-                </div>
-
-                <!-- Project Card — Template 3 (Portfolio) -->
-                <div class="project-card" data-category="web">
-                    <div class="project-card-top">
-                        <div class="project-icon-wrap">
-                            <i class="fa-solid fa-user-tie"></i>
-                        </div>
-                        <div class="project-links">
-                            <a href="https://github.com/adityasoni39" target="_blank" aria-label="View Code">
-                                <i class="fa-brands fa-github"></i>
-                            </a>
-                            <a href="https://github.com/adityasoni39" target="_blank" aria-label="Live Demo">
-                                <i class="fa-solid fa-arrow-up-right-from-square"></i>
-                            </a>
-                        </div>
-                    </div>
-                    <h3>Portfolio Website</h3>
-                    <p>
-                        This very portfolio — a responsive personal
-                        website showcasing my skills, education, and
-                        journey. Built with modern HTML, CSS, and
-                        JavaScript with smooth animations.
-                    </p>
-                    <div class="project-tags">
-                        <span>HTML</span><span>CSS</span><span>JavaScript</span>
-                    </div>
-                </div>
-            </div>
+      <div class="container">
+        <div class="section-header">
+          <span class="section-tag"> what i've built</span>
+          <h2 class="section-title">
+            My <span class="highlight">Projects</span>
+          </h2>
         </div>
+
+        <div class="projects-grid">
+          <!-- Project Card — Template 1 -->
+          <div class="project-card" data-category="web">
+            <div class="project-card-top">
+              <div class="project-icon-wrap">
+                <i class="fa-solid fa-code"></i>
+              </div>
+              <div class="project-links">
+                <a
+                  href="https://github.com/adityasoni39"
+                  target="_blank"
+                  aria-label="View Code"
+                >
+                  <i class="fa-brands fa-github"></i>
+                </a>
+                <a
+                  href="https://github.com/adityasoni39"
+                  target="_blank"
+                  aria-label="Live Demo"
+                >
+                  <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                </a>
+              </div>
+            </div>
+            <h3>Project Coming Soon</h3>
+            <p>
+              I'm currently working on exciting projects that showcase my skills
+              in web development and AI. Stay tuned for updates — this space
+              will be filled with innovative work soon!
+            </p>
+            <div class="project-tags">
+              <span>HTML</span><span>CSS</span><span>Java</span>
+            </div>
+          </div>
+
+          <!-- Project Card — Template 2 -->
+          <div class="project-card" data-category="ai">
+            <div class="project-card-top">
+              <div class="project-icon-wrap">
+                <i class="fa-solid fa-robot"></i>
+              </div>
+              <div class="project-links">
+                <a
+                  href="https://github.com/adityasoni39"
+                  target="_blank"
+                  aria-label="View Code"
+                >
+                  <i class="fa-brands fa-github"></i>
+                </a>
+                <a
+                  href="https://github.com/adityasoni39"
+                  target="_blank"
+                  aria-label="Live Demo"
+                >
+                  <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                </a>
+              </div>
+            </div>
+            <h3>AI Project Coming Soon</h3>
+            <p>
+              An AI-powered project is in the works, combining my passion for
+              artificial intelligence with practical development skills. Check
+              back for details!
+            </p>
+            <div class="project-tags">
+              <span>AI</span><span>C</span><span>Design</span>
+            </div>
+          </div>
+
+          <!-- Project Card — Template 3 (Portfolio) -->
+          <div class="project-card" data-category="web">
+            <div class="project-card-top">
+              <div class="project-icon-wrap">
+                <i class="fa-solid fa-user-tie"></i>
+              </div>
+              <div class="project-links">
+                <a
+                  href="https://github.com/adityasoni39"
+                  target="_blank"
+                  aria-label="View Code"
+                >
+                  <i class="fa-brands fa-github"></i>
+                </a>
+                <a
+                  href="https://github.com/adityasoni39"
+                  target="_blank"
+                  aria-label="Live Demo"
+                >
+                  <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                </a>
+              </div>
+            </div>
+            <h3>Portfolio Website</h3>
+            <p>
+              This very portfolio — a responsive personal website showcasing my
+              skills, education, and journey. Built with modern HTML, CSS, and
+              JavaScript with smooth animations.
+            </p>
+            <div class="project-tags">
+              <span>HTML</span><span>CSS</span><span>JavaScript</span>
+            </div>
+          </div>
+        </div>
+      </div>
     </section>
 
     <!-- ========== CONTACT SECTION ========== -->
     <section class="section contact-section" id="contact">
-        <div class="container">
-            <div class="section-header">
-                <span class="section-tag">let's talk</span>
-                <h2 class="section-title">Get In <span class="highlight">Touch</span></h2>
-            </div>
-
-            <div class="contact-grid">
-                <!-- Left: Info -->
-                <div class="contact-info">
-                    <p class="contact-intro">
-                        I'm always open to exciting opportunities,
-                        collaborations, or just a friendly chat about
-                        technology and AI. Drop me a message!
-                    </p>
-
-                    <div class="contact-detail-list">
-                        <div class="contact-detail">
-                            <div class="contact-detail-icon">
-                                <i class="fa-solid fa-envelope"></i>
-                            </div>
-                            <div>
-                                <span>Email</span>
-                                <a href="mailto:aryansoni202006@gmail.com">aryansoni202006@gmail.com</a>
-                            </div>
-                        </div>
-                        <div class="contact-detail">
-                            <div class="contact-detail-icon">
-                                <i class="fa-solid fa-location-dot"></i>
-                            </div>
-                            <div>
-                                <span>Location</span>
-                                <p>India</p>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Social Links -->
-                    <div class="contact-socials">
-                        <a href="https://github.com/adityasoni39" target="_blank" class="social-icon"
-                            aria-label="GitHub">
-                            <i class="fa-brands fa-github"></i>
-                        </a>
-                        <a href="https://www.linkedin.com/in/aditya-soni-7aa5722a4?utm_source=share_via&utm_content=profile&utm_medium=member_android"
-                            target="_blank" class="social-icon" aria-label="LinkedIn">
-                            <i class="fa-brands fa-linkedin-in"></i>
-                        </a>
-                    </div>
-                </div>
-
-                <!-- Right: Form -->
-                <div class="contact-form-wrapper">
-                    <div class="contact-form" id="contactForm">
-                        <div class="form-group">
-                            <label for="name">Full Name</label>
-                            <input type="text" id="name" placeholder="Your full name" required />
-                        </div>
-                        <div class="form-group">
-                            <label for="email">Email Address</label>
-                            <input type="email" id="email" placeholder="your@email.com" required />
-                        </div>
-                        <div class="form-group">
-                            <label for="message">Message</label>
-                            <textarea id="message" rows="5" placeholder="Tell me about your project or idea..."
-                                required></textarea>
-                        </div>
-                        <button type="button" class="btn btn-primary btn-full" id="sendBtn"
-                            onclick="handleFormSubmit()">
-                            <i class="fa-solid fa-paper-plane"></i> Send
-                            Message
-                        </button>
-                    </div>
-                    <!-- Success message (hidden by default) -->
-                    <div class="form-success" id="formSuccess" style="display:none;">
-                        <i class="fa-solid fa-circle-check"></i>
-                        <h3>Message Sent!</h3>
-                        <p>Thanks for reaching out. I'll get back to you
-                            shortly.</p>
-                    </div>
-                </div>
-            </div>
+      <div class="container">
+        <div class="section-header">
+          <span class="section-tag">let's talk</span>
+          <h2 class="section-title">
+            Get In <span class="highlight">Touch</span>
+          </h2>
         </div>
+
+        <div class="contact-grid">
+          <!-- Left: Info -->
+          <div class="contact-info">
+            <p class="contact-intro">
+              I'm always open to exciting opportunities, collaborations, or just
+              a friendly chat about technology and AI. Drop me a message!
+            </p>
+
+            <div class="contact-detail-list">
+              <div class="contact-detail">
+                <div class="contact-detail-icon">
+                  <i class="fa-solid fa-envelope"></i>
+                </div>
+                <div>
+                  <span>Email</span>
+                  <a href="mailto:aryansoni202006@gmail.com"
+                    >aryansoni202006@gmail.com</a
+                  >
+                </div>
+              </div>
+              <div class="contact-detail">
+                <div class="contact-detail-icon">
+                  <i class="fa-solid fa-location-dot"></i>
+                </div>
+                <div>
+                  <span>Location</span>
+                  <p>India</p>
+                </div>
+              </div>
+            </div>
+
+            <!-- Social Links -->
+            <div class="contact-socials">
+              <a
+                href="https://github.com/adityasoni39"
+                target="_blank"
+                class="social-icon"
+                aria-label="GitHub"
+              >
+                <i class="fa-brands fa-github"></i>
+              </a>
+              <a
+                href="https://www.linkedin.com/in/aditya-soni-7aa5722a4?utm_source=share_via&utm_content=profile&utm_medium=member_android"
+                target="_blank"
+                class="social-icon"
+                aria-label="LinkedIn"
+              >
+                <i class="fa-brands fa-linkedin-in"></i>
+              </a>
+            </div>
+          </div>
+
+          <!-- Right: Form -->
+          <div class="contact-form-wrapper">
+            <div class="contact-form" id="contactForm">
+              <div class="form-group">
+                <label for="name">Full Name</label>
+                <input
+                  type="text"
+                  id="name"
+                  placeholder="Your full name"
+                  required
+                />
+              </div>
+              <div class="form-group">
+                <label for="email">Email Address</label>
+                <input
+                  type="email"
+                  id="email"
+                  placeholder="your@email.com"
+                  required
+                />
+              </div>
+              <div class="form-group">
+                <label for="message">Message</label>
+                <textarea
+                  id="message"
+                  rows="5"
+                  placeholder="Tell me about your project or idea..."
+                  required
+                ></textarea>
+              </div>
+              <button
+                type="button"
+                class="btn btn-primary btn-full"
+                id="sendBtn"
+                onclick="handleFormSubmit()"
+              >
+                <i class="fa-solid fa-paper-plane"></i> Send Message
+              </button>
+            </div>
+            <!-- Success message (hidden by default) -->
+            <div class="form-success" id="formSuccess" style="display: none">
+              <i class="fa-solid fa-circle-check"></i>
+              <h3>Message Sent!</h3>
+              <p>Thanks for reaching out. I'll get back to you shortly.</p>
+            </div>
+          </div>
+        </div>
+      </div>
     </section>
 
     <!-- ========== FOOTER ========== -->
     <footer class="footer">
-        <div class="footer-glow"></div>
-        <div class="container">
-            <div class="footer-content">
-                <a href="#home" class="nav-logo">
-                    <span class="logo-bracket">&lt;</span>AS<span class="logo-bracket">/&gt;</span>
-                </a>
-                <p>Crafting the Future with <strong>AI & Code</strong> —
-                    Aditya Soni</p>
-                <div class="footer-links">
-                    <a href="#home">Home</a>
-                    <a href="#about">About</a>
-                    <a href="#skills">Skills</a>
-                    <a href="#projects">Projects</a>
-                    <a href="#contact">Contact</a>
-                </div>
-            </div>
-            <div class="footer-bottom">
-                <p>&copy; 2026 Aditya Soni. Made with <span class="footer-heart">❤</span> & a lot
-                    of <span class="footer-code">&lt;code/&gt;</span></p>
-            </div>
+      <div class="footer-glow"></div>
+      <div class="container">
+        <div class="footer-content">
+          <a href="#home" class="nav-logo">
+            <span class="logo-bracket">&lt;</span>AS<span class="logo-bracket"
+              >/&gt;</span
+            >
+          </a>
+          <p>
+            Crafting the Future with <strong>AI & Code</strong> — Aditya Soni
+          </p>
+          <div class="footer-links">
+            <a href="#home">Home</a>
+            <a href="#about">About</a>
+            <a href="#skills">Skills</a>
+            <a href="#projects">Projects</a>
+            <a href="#contact">Contact</a>
+          </div>
         </div>
+        <div class="footer-bottom">
+          <p>
+            &copy; 2026 Aditya Soni. Made with
+            <span class="footer-heart">❤</span> & a lot of
+            <span class="footer-code">&lt;code/&gt;</span>
+          </p>
+        </div>
+      </div>
     </footer>
 
     <!-- Back to Top Button -->
     <button class="back-to-top" id="backToTop" aria-label="Back to top">
-        <i class="fa-solid fa-arrow-up"></i>
+      <i class="fa-solid fa-arrow-up"></i>
     </button>
 
     <!-- JavaScript -->
     <script type="module" src="index.js"></script>
     <script src="animations.js" defer></script>
-</body>
-
+  </body>
 </html>
